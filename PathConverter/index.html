@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+	<title>Path Converter</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body onload="loadPathFromURL()">
+
+<h1>Convertisseur de chemin d'accès</h1>
+
+<label for="inputPath">Chemin d'accès Windows :</label><br>
+<input type="text" id="inputPath" name="inputPath" oninput="convertAndSetPath()"><br>
+<label for="outputPath">Chemin d'accès converti :</label><br>
+<input type="text" id="outputPath" name="outputPath" readonly><br>
+<button onclick="redirectToConvertedPath()">Aller à</button>
+
+</body>
+
+</html>
