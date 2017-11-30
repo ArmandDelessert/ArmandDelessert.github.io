@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Inventory-HE-Arc-Web-App</title>
+	<meta charset="utf-8">
+	<script src="js/instascan.min.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body>
+
+
+<h1>Inventory-HE-Arc-Web-App</h1>
+
+<hr/>
+
+
+<div id="signIn">
+	<h2>Please sign in</h2>
+
+	<p>To login, use the login details below:</p>
+	<p>
+		Username: devweb.user
+		</br>
+		Password: 123456
+		</br>
+		Password MD5 hash: e10adc3949ba59abbe56e057f20f883e
+	</p>
+
+	<div>
+		<input type="text" required name="username" id="login_username" placeholder="Username" value="devweb.user">
+		<input type="password" required name="password" id="login_password" placeholder="Password" value="123456">
+		<button onclick="login_onclick()">Sign in</button>
+	</div>
+	<p id="login_response"></p>
+</div>
+
+<hr/>
+
+
+<div id="showProduct" style="display:none">
+	<h2>Show a product</h2>
+	<div>
+		<input type="number" required name="productId" id="showProductDetails_productId" placeholder="Product ID">
+		<button onclick="getProductDetails_onclick()">Show product</button>
+	</div>
+	<p id="getProductDetails_response"></p>
+</div>
+
+
+<div id="scanCode" style="display:none">
+	<h2>Scan a barcode or a QR code</h2>
+	<div>
+
+		<video id="scanCodePreview"></video>
+
+		<button onclick="scanCode()">Start camera</button>
+	</div>
+	<p id="scanCode_response"></p>
+</div>
+
+
+<div id="searchProductByName" style="display:none">
+<h2>Search a product by name</h2>
+	<div>
+		<input type="text" required name="term" id="searchProductByName_term" placeholder="Product to search…">
+		<button onclick="searchProductByName_onclick()">Search</button>
+	</div>
+	<p id="searchProductByName_response"></p>
+</div>
+
+<hr/>
+
+
+<div id="loanProduct" style="display:none">
+	<h2>Loan the product</h2>
+	<div>
+		<input type="date" required name="beginDate" id="beginDate_productId">
+		<input type="date" required name="endDate" id="endDate_productId">
+		<button onclick="loanProduct_onclick()">Loan</button>
+	</div>
+	<p id="loanProduct_response"></p>
+</div>
+
+
+<div id="returnProduct" style="display:none">
+	<h2>Return the product</h2>
+	<div>
+		<button onclick="returnProduct_onclick()">Return</button>
+	</div>
+	<p id="returnProduct_response"></p>
+</div>
+
+<hr/>
+
+</body>
+
+</html>
