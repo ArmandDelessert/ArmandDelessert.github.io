@@ -205,7 +205,7 @@ function processSearchProductByName(response) {
 					+ response.results[i].name
 					+ "</li>" + "</a>";
 
-			document.getElementById(resultId).onclick = function() {
+			document.getElementById(resultId).onclick = function() { // DEBUG: N'est pas appelé lors du clic... Pourquoi ?
 				// Recherche du produit sélectionné
 				productId = response.result[i].id;
 				getProductDetails(productId);
