@@ -8,6 +8,9 @@ Application web pour la gestion des emprunts et des retours de matériel de l'in
 
 [HE-Arc](https://github.com/HE-Arc)/[Inventory-HE-Arc-Web-App](https://github.com/HE-Arc/Inventory-HE-Arc-Web-App)
 
+### Page de test
+* [apiTester/index.html](https://armanddelessert.github.io/apiTester/index.html)
+
 ### Test du scan de codes-barres et de codes QR
 * [codeScanning/testScanner.html](https://armanddelessert.github.io/codeScanning/testScanner.html)
 * [WebCodeCamJS/simple_buildselect.html](https://armanddelessert.github.io/WebCodeCamJS/simple_buildselect.html)
