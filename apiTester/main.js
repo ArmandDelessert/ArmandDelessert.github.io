@@ -64,7 +64,8 @@ function processLogin(response) {
 
 		// Affichage des autres commandes
 		document.getElementById('showProduct').style.display = 'block';
-		document.getElementById('scanCode').style.display = 'block';
+		document.getElementById('scanInstascan').style.display = 'block';
+		document.getElementById('scanWebCodeCamJS').style.display = 'block';
 		document.getElementById('searchProductByName').style.display = 'block';
 	}
 	else {
@@ -191,36 +192,66 @@ function processSearchProductByName(response) {
 		console.log("Complete response:\n" + JSON.stringify(response));
 
 		// Affichage des résultats
-		document.getElementById('searchProductByName_response').innerHTML =
-				"Nombre de résultats : " + response.number_results;
+		var responseSection = document.getElementById('searchProductByName_response');
+		responseSection.innerHTML = "Nombre de résultats : " + response.number_results;
+		responseSection.innerHTML += "</br>";
 
-		document.getElementById('searchProductByName_response').innerHTML += "<ul>";
+		responseSection.innerHTML += "<ul id=\"searchProductByName_list\"></ul>";
+		var resultsListSection = document.getElementById('searchProductByName_list');
 		for (i = 0; i < response.number_results; ++i) {
 			var resultId = "searchProductByName_result" + i;
 
-			document.getElementById('searchProductByName_response').innerHTML +=
+			resultsListSection.innerHTML +=
 					"<li>" + "<a " + "id=\"" + resultId + "\"" + " href=\"" + "#" + "\">"
 					+ response.results[i].id
 					+ ": "
 					+ response.results[i].name
-					+ "</li>" + "</a>";
-
+					+ "</a>" + "</li>";
+/*
+			responseSection.innerHTML +=
+					"<li>" + "<a " + "href=\"" + makeUrlGetProductDetails(response.results[i].id) + "\">"
+					+ response.results[i].id
+					+ ": "
+					+ response.results[i].name
+					+ "</a>" + "</li>";
+*//*
 			document.getElementById(resultId).onclick = function() { // DEBUG: N'est pas appelé lors du clic... Pourquoi ?
 				// Recherche du produit sélectionné
-				productId = response.result[i].id;
+				productId = response.results[i].id;
 				getProductDetails(productId);
 
-				alert("You have clicked on the product " + response.result[i].id + "!"); // DEBUG
+				alert("You have clicked on the product " + response.results[i].id + "!"); // DEBUG
 
 				return false;
 			}
+*/
+//			document.getElementById(resultId).addEventListener("click", onSearchResultSelection(response), false);
+			var truc = document.getElementById(resultId);
+			document.getElementById(resultId).addEventListener("click", function()
+					{
+						alert("Clicked!");
+						/*
+						productId = response.results[i].id;
+						getProductDetails(productId);*/
+					}, false);
 		}
-		document.getElementById('searchProductByName_response').innerHTML += "</ul>";
+//		responseSection.innerHTML += "</ul>";
 	}
 	else {
 		// Affichage de l'erreur
 		printError('searchProductByName_response', response);
 	}
+}
+
+
+function onSearchResultSelection(response) {
+	// Recherche du produit sélectionné
+	productId = response.results[i].id;
+	getProductDetails(productId);
+
+	alert("You have clicked on the product " + response.results[i].id + "!"); // DEBUG
+
+	return false;
 }
 
 
@@ -400,15 +431,16 @@ function printError(elementId, response) {
 
 
 /*
-Démarrage du scan de codes-barres et codes QR.
+Scanner Instascan
+Démarrage du scan de codes QR.
 */
-function scanCode() {
-	let scanner = new Instascan.Scanner({ video: document.getElementById('scanCodePreview') });
+function scanInstascan() {
+	let scanner = new Instascan.Scanner({ video: document.getElementById('scanInstascanPreview') });
 	scanner.addListener('scan', function (content) {
 		console.log("QR code detected and processed : [" + content + "]");
 
 		// Affichage du contenu du code QR
-		document.getElementById("scanCode_response").innerHTML = "Found QR code: [" + content + "]";
+		document.getElementById("scanInstascan_response").innerHTML = "Found QR code: " + content;
 
 		// Recherche du produit correspondant
 		productId = content;
@@ -422,5 +454,31 @@ function scanCode() {
 		}
 	}).catch(function (e) {
 		console.error(e);
+	});
+}
+
+
+/*
+Scanner WebCodeCanJS
+Démarrage du scan de codes-barres et codes QR.
+*/
+function scanWebCodeCamJS() {
+	var txt = "innerText" in HTMLElement.prototype ? "innerText" : "textContent";
+	var arg = {
+		resultFunction: function(result) {
+			// Affichage du contenu du code QR
+			document.getElementById("scanWebCodeCamJS_response").innerHTML = "Found " + result.format + ": " + result.code;
+
+			// Recherche du produit correspondant
+			productId = result.code;
+			getProductDetails(productId);
+		}
+	};
+	var decoder = new WebCodeCamJS("canvas").buildSelectMenu('select', 'environment|back').init(arg).play();
+	/*  Without visible select menu
+			var decoder = new WebCodeCamJS("canvas").buildSelectMenu(document.createElement('select'), 'environment|back').init(arg).play();
+	*/
+	document.querySelector('select').addEventListener('change', function() {
+		decoder.stop().play();
 	});
 }
