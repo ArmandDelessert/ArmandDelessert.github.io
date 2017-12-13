@@ -1,19 +1,17 @@
 # ArmandDelessert.github.io
 This is my own test website.
 
-[ArmandDelessert.github.io](https://armanddelessert.github.io/)
+* Web page: [ArmandDelessert.github.io](https://armanddelessert.github.io/)
+* Repository: [ArmandDelessert](https://github.com/ArmandDelessert)/[ArmandDelessert.github.io](https://github.com/ArmandDelessert/ArmandDelessert.github.io)
 
 ## Inventory-HE-Arc-Web-App
 Application web pour la gestion des emprunts et des retours de matériel de l'inventaire de l'HE-Arc.
 
-[HE-Arc](https://github.com/HE-Arc)/[Inventory-HE-Arc-Web-App](https://github.com/HE-Arc/Inventory-HE-Arc-Web-App)
+* [HE-Arc](https://github.com/HE-Arc)/[Inventory-HE-Arc-Web-App](https://github.com/HE-Arc/Inventory-HE-Arc-Web-App)
+* [README](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/Inventory-HE-Arc-Web-App/README.md)
 
-### Page de test
-* [apiTester/index.html](https://armanddelessert.github.io/apiTester/index.html)
-
-### Test du scan de codes-barres et de codes QR
-* [codeScanning/testScanner.html](https://armanddelessert.github.io/codeScanning/testScanner.html)
-* [WebCodeCamJS/simple_buildselect.html](https://armanddelessert.github.io/WebCodeCamJS/simple_buildselect.html)
+### Page de gestion de l'inventaire
+* [Inventory-HE-Arc-Web-App/index.html](https://armanddelessert.github.io/Inventory-HE-Arc-Web-App/index.html)
 
 #### Quelques codes-barres et codes QR d'exemples
 * Code-barres de l'ID 00215 :
