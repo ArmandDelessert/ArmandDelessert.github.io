@@ -11,7 +11,7 @@ Application web pour la gestion des emprunts et des retours de matériel de l'in
 * [README](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/Inventory-HE-Arc-Web-App/README.md)
 
 ### Page de gestion de l'inventaire
-* [Inventory-HE-Arc-Web-App/index.html](https://armanddelessert.github.io/Inventory-HE-Arc-Web-App/index.html)
+* [HE-Arc/Inventory-HE-Arc-Web-App/index.html](https://armanddelessert.github.io/Inventory-HE-Arc-Web-App/index.html)
 
 #### Quelques codes-barres et codes QR d'exemples
 * Code-barres de l'ID 00215 :
