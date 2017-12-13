@@ -2,104 +2,12 @@
 Choix de l'API.
 */
 // API définies
-const currentProdApi = 1;
-const currentDevApi = 2;
-const newApi = 3;
+const currentProdApi = 0;
+const currentDevApi = 1;
+const newApi = 2;
 
 // API utilisée
-const usedApi = newApi;
-
-// Constructions des URL
-if (usedApi == currentProdApi) {
-	const urlBase = "https://inventory.ing.he-arc.ch/api/rest/";
-
-	// URL pour le login
-	var loginUrl001 = "https://inventory.ing.he-arc.ch/api/login/";
-	var loginUrl002 = "/";
-	var loginUrl003 = "";
-
-	// URL pour l'affichage d'un produit
-	var urlGetProductDetails001 = urlBase;
-	var urlGetProductDetails002 = "/Product/info?productId=";
-	var urlGetProductDetails003 = "";
-
-	// URL pour la recherche d'un produit
-	var urlSearchProductByName001 = urlBase;
-	var urlSearchProductByName002 = "/search/";
-	var urlSearchProductByName003 = "/";
-
-	// URL pour l'emprunt d'un produit
-	var urlLoanProduct001 = urlBase;
-	var urlLoanProduct002 = "/Product/loan?productId=";
-	var urlLoanProduct003 = "&beginDate=";
-	var urlLoanProduct004 = "&endDate=";
-	var urlLoanProduct005 = "";
-
-	// URL pour le retour d'un produit
-	var urlReturnProduct001 = urlBase;
-	var urlReturnProduct002 = "/Product/returnProduct?productId=";
-	var urlReturnProduct003 = "";
-}
-else if (usedApi == currentDevApi) {
-	const urlBase = "http://inventory-dev.ing.he-arc.ch/api/rest/";
-
-	// URL pour le login
-	var loginUrl001 = "http://inventory-dev.ing.he-arc.ch/api/login/";
-	var loginUrl002 = "/";
-	var loginUrl003 = "";
-
-	// URL pour l'affichage d'un produit
-	var urlGetProductDetails001 = urlBase;
-	var urlGetProductDetails002 = "/Product/info?productId=";
-	var urlGetProductDetails003 = "";
-
-	// URL pour la recherche d'un produit
-	var urlSearchProductByName001 = urlBase;
-	var urlSearchProductByName002 = "/search/";
-	var urlSearchProductByName003 = "/";
-
-	// URL pour l'emprunt d'un produit
-	var urlLoanProduct001 = urlBase;
-	var urlLoanProduct002 = "/Product/loan?productId=";
-	var urlLoanProduct003 = "&beginDate=";
-	var urlLoanProduct004 = "&endDate=";
-	var urlLoanProduct005 = "";
-
-	// URL pour le retour d'un produit
-	var urlReturnProduct001 = urlBase;
-	var urlReturnProduct002 = "/Product/returnProduct?productId=";
-	var urlReturnProduct003 = "";
-}
-else if (usedApi == newApi) {
-	const urlBase = "https://demo6654639.mockable.io/api/rest/";
-
-	// URL pour le login
-	var loginUrl001 = "https://demo6654639.mockable.io/api/login/";
-	var loginUrl002 = "/";
-	var loginUrl003 = "/";
-
-	// URL pour l'affichage d'un produit
-	var urlGetProductDetails001 = urlBase;
-	var urlGetProductDetails002 = "/products/";
-	var urlGetProductDetails003 = "/details/";
-
-	// URL pour la recherche d'un produit
-	var urlSearchProductByName001 = urlBase;
-	var urlSearchProductByName002 = "/search/";
-	var urlSearchProductByName003 = "/";
-
-	// URL pour l'emprunt d'un produit
-	var urlLoanProduct001 = urlBase;
-	var urlLoanProduct002 = "/products/";
-	var urlLoanProduct003 = "/loan/";
-	var urlLoanProduct004 = "/";
-	var urlLoanProduct005 = "/";
-
-	// URL pour le retour d'un produit
-	var urlReturnProduct001 = urlBase;
-	var urlReturnProduct002 = "/products/";
-	var urlReturnProduct003 = "/return/";
-}
+var chosenApi;
 
 
 /*
@@ -108,6 +16,133 @@ Variables globales.
 var theToken;
 var productId;
 var resultProductsId = [];
+
+// Définition des variables pour la construction des URL
+var loginUrl001, loginUrl002, loginUrl003;
+var urlGetProductDetails001, urlGetProductDetails002, urlGetProductDetails003;
+var urlSearchProductByName001, urlSearchProductByName002, urlSearchProductByName003;
+var urlLoanProduct001, urlLoanProduct002, urlLoanProduct003, urlLoanProduct004, urlLoanProduct005;
+var urlReturnProduct001, urlReturnProduct002, urlReturnProduct003;
+
+
+/*
+Initialisations.
+*/
+// Sélection de l'API
+window.addEventListener("load", selectApi);
+
+
+/*
+Sélection de l'API.
+*/
+function selectApi() {
+	chosenApi = document.getElementById('apiSelection').selectedIndex;
+	buildUrls();
+}
+
+/*
+Construction des URL de l'API.
+*/
+function buildUrls() {
+	if (chosenApi == currentProdApi) {
+		const urlBase = "https://inventory.ing.he-arc.ch/api/rest/";
+
+		// URL pour le login
+		loginUrl001 = "https://inventory.ing.he-arc.ch/api/login/";
+		loginUrl002 = "/";
+		loginUrl003 = "";
+
+		// URL pour l'affichage d'un produit
+		urlGetProductDetails001 = urlBase;
+		urlGetProductDetails002 = "/Product/info?productId=";
+		urlGetProductDetails003 = "";
+
+		// URL pour la recherche d'un produit
+		urlSearchProductByName001 = urlBase;
+		urlSearchProductByName002 = "/Product/search?term=";
+		urlSearchProductByName003 = "";
+
+		// URL pour l'emprunt d'un produit
+		urlLoanProduct001 = urlBase;
+		urlLoanProduct002 = "/Product/loan?productId=";
+		urlLoanProduct003 = "&beginDate=";
+		urlLoanProduct004 = "&endDate=";
+		urlLoanProduct005 = "";
+
+		// URL pour le retour d'un produit
+		urlReturnProduct001 = urlBase;
+		urlReturnProduct002 = "/Product/returnProduct?productId=";
+		urlReturnProduct003 = "";
+	}
+	else if (chosenApi == currentDevApi) {
+		console.log("To login to the dev API, use the following login informations:\n" +
+				"Username: devweb.user or devweb.manager or devweb.admin\n" +
+				"Password: 123456");
+
+		const urlBase = "http://inventory-dev.ing.he-arc.ch/api/rest/";
+
+		// URL pour le login
+		loginUrl001 = "http://inventory-dev.ing.he-arc.ch/api/login/";
+		loginUrl002 = "/";
+		loginUrl003 = "";
+
+		// URL pour l'affichage d'un produit
+		urlGetProductDetails001 = urlBase;
+		urlGetProductDetails002 = "/Product/info?productId=";
+		urlGetProductDetails003 = "";
+
+		// URL pour la recherche d'un produit
+		urlSearchProductByName001 = urlBase;
+		urlSearchProductByName002 = "/Product/search?term=";
+		urlSearchProductByName003 = "";
+
+		// URL pour l'emprunt d'un produit
+		urlLoanProduct001 = urlBase;
+		urlLoanProduct002 = "/Product/loan?productId=";
+		urlLoanProduct003 = "&beginDate=";
+		urlLoanProduct004 = "&endDate=";
+		urlLoanProduct005 = "";
+
+		// URL pour le retour d'un produit
+		urlReturnProduct001 = urlBase;
+		urlReturnProduct002 = "/Product/returnProduct?productId=";
+		urlReturnProduct003 = "";
+	}
+	else if (chosenApi == newApi) {
+		console.log("To login to the new API on Mockable.io, use the following login informations:\n" +
+				"Username: devweb.user\n" +
+				"Password: 123456");
+
+		const urlBase = "https://demo6654639.mockable.io/api/rest/";
+
+		// URL pour le login
+		loginUrl001 = "https://demo6654639.mockable.io/api/login/";
+		loginUrl002 = "/";
+		loginUrl003 = "/";
+
+		// URL pour l'affichage d'un produit
+		urlGetProductDetails001 = urlBase;
+		urlGetProductDetails002 = "/products/";
+		urlGetProductDetails003 = "/details/";
+
+		// URL pour la recherche d'un produit
+		urlSearchProductByName001 = urlBase;
+		urlSearchProductByName002 = "/search/";
+		urlSearchProductByName003 = "/";
+
+		// URL pour l'emprunt d'un produit
+		urlLoanProduct001 = urlBase;
+		urlLoanProduct002 = "/products/";
+		urlLoanProduct003 = "/loan/";
+		urlLoanProduct004 = "/";
+		urlLoanProduct005 = "/";
+
+		// URL pour le retour d'un produit
+		urlReturnProduct001 = urlBase;
+		urlReturnProduct002 = "/products/";
+		urlReturnProduct003 = "/return/";
+	}
+}
 
 
 /*

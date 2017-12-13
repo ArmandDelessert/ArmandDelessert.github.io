@@ -25,18 +25,8 @@
 
 <div id="signIn">
 	<h2>Please sign in</h2>
-
-	<p>To login, use the login details below:</p>
-	<p>
-		Username: devweb.user
-		</br>
-		Password: 123456
-		</br>
-		Password MD5 hash: e10adc3949ba59abbe56e057f20f883e
-	</p>
-
 	<div>
-		<input type="text" required name="username" id="login_username" placeholder="Username" value="devweb.user">
+		<input type="text" required name="username" id="login_username" placeholder="Username" value="devweb.user" autofocus>
 		<input type="password" required name="password" id="login_password" placeholder="Password" value="123456">
 		<button onclick="login_onclick()">Sign in</button>
 	</div>
@@ -102,8 +92,14 @@
 
 <hr/>
 
+<select id="apiSelection" onchange="selectApi()">
+	<option>API actuelle (prod)</option>
+	<option>API actuelle (dev)</option>
+	<option selected>Nouvelle API</option>
+</select>
+
 <script type="text/javascript">
-	// Ajout des focus lors de l'appuis sur Entrée dans les champs de texte
+	// Ajout du focus sur les champs texte et les boutons
 	window.onload = function () {
 		// Login form
 		document.getElementById('login_username').onkeypress = function(e) {
