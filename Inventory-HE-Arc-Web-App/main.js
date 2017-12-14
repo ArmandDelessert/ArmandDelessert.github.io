@@ -79,10 +79,10 @@ function buildUrls() {
 				"Username: devweb.user or devweb.manager or devweb.admin\n" +
 				"Password: 123456");
 
-		const urlBase = "http://inventory-dev.ing.he-arc.ch/api/rest/";
+		const urlBase = "https://inventory-dev.ing.he-arc.ch/api/rest/";
 
 		// URL pour le login
-		loginUrl001 = "http://inventory-dev.ing.he-arc.ch/api/login/";
+		loginUrl001 = "https://inventory-dev.ing.he-arc.ch/api/login/";
 		loginUrl002 = "/";
 		loginUrl003 = "";
 
