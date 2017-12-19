@@ -38,6 +38,13 @@ Sélection de l'API.
 function selectApi() {
 	chosenApi = document.getElementById('apiSelection').selectedIndex;
 	buildUrls();
+
+	// Masquage des autres sections
+	hideShowAndSearchProduct();
+	hideLoanAndReturn();
+
+	// Affichage de la section login
+	showLogin();
 }
 
 /*
@@ -51,16 +58,19 @@ function buildUrls() {
 		loginUrl001 = "https://inventory.ing.he-arc.ch/api/login/";
 		loginUrl002 = "/";
 		loginUrl003 = "";
+		loginHttpMethod = "GET";
 
 		// URL pour l'affichage d'un produit
 		urlGetProductDetails001 = urlBase;
 		urlGetProductDetails002 = "/Product/info?productId=";
 		urlGetProductDetails003 = "";
+		httpMethodGetProduct = "GET";
 
 		// URL pour la recherche d'un produit
 		urlSearchProductByName001 = urlBase;
 		urlSearchProductByName002 = "/Product/search?term=";
 		urlSearchProductByName003 = "";
+		httpMethodSearchProduct = "GET";
 
 		// URL pour l'emprunt d'un produit
 		urlLoanProduct001 = urlBase;
@@ -68,11 +78,13 @@ function buildUrls() {
 		urlLoanProduct003 = "&beginDate=";
 		urlLoanProduct004 = "&endDate=";
 		urlLoanProduct005 = "";
+		httpMethodLoanProduct = "GET";
 
 		// URL pour le retour d'un produit
 		urlReturnProduct001 = urlBase;
 		urlReturnProduct002 = "/Product/returnProduct?productId=";
 		urlReturnProduct003 = "";
+		httpMethodReturnProduct = "GET";
 	}
 	else if (chosenApi == currentDevApi) {
 		console.log("To login to the dev API, use the following login informations:\n" +
@@ -85,16 +97,19 @@ function buildUrls() {
 		loginUrl001 = "https://inventory-dev.ing.he-arc.ch/api/login/";
 		loginUrl002 = "/";
 		loginUrl003 = "";
+		loginHttpMethod = "GET";
 
 		// URL pour l'affichage d'un produit
 		urlGetProductDetails001 = urlBase;
 		urlGetProductDetails002 = "/Product/info?productId=";
 		urlGetProductDetails003 = "";
+		httpMethodGetProduct = "GET";
 
 		// URL pour la recherche d'un produit
 		urlSearchProductByName001 = urlBase;
 		urlSearchProductByName002 = "/Product/search?term=";
 		urlSearchProductByName003 = "";
+		httpMethodSearchProduct = "GET";
 
 		// URL pour l'emprunt d'un produit
 		urlLoanProduct001 = urlBase;
@@ -102,11 +117,13 @@ function buildUrls() {
 		urlLoanProduct003 = "&beginDate=";
 		urlLoanProduct004 = "&endDate=";
 		urlLoanProduct005 = "";
+		httpMethodLoanProduct = "GET";
 
 		// URL pour le retour d'un produit
 		urlReturnProduct001 = urlBase;
 		urlReturnProduct002 = "/Product/returnProduct?productId=";
 		urlReturnProduct003 = "";
+		httpMethodReturnProduct = "GET";
 	}
 	else if (chosenApi == newApi) {
 		console.log("To login to the new API on Mockable.io, use the following login informations:\n" +
@@ -119,16 +136,19 @@ function buildUrls() {
 		loginUrl001 = "https://demo6654639.mockable.io/api/login/";
 		loginUrl002 = "/";
 		loginUrl003 = "/";
+		loginHttpMethod = "GET";
 
 		// URL pour l'affichage d'un produit
 		urlGetProductDetails001 = urlBase;
 		urlGetProductDetails002 = "/products/";
 		urlGetProductDetails003 = "/details/";
+		httpMethodGetProduct = "GET";
 
 		// URL pour la recherche d'un produit
 		urlSearchProductByName001 = urlBase;
 		urlSearchProductByName002 = "/search/";
 		urlSearchProductByName003 = "/";
+		httpMethodSearchProduct = "GET";
 
 		// URL pour l'emprunt d'un produit
 		urlLoanProduct001 = urlBase;
@@ -136,11 +156,13 @@ function buildUrls() {
 		urlLoanProduct003 = "/loan/";
 		urlLoanProduct004 = "/";
 		urlLoanProduct005 = "/";
+		httpMethodLoanProduct = "PUT";
 
 		// URL pour le retour d'un produit
 		urlReturnProduct001 = urlBase;
 		urlReturnProduct002 = "/products/";
 		urlReturnProduct003 = "/return/";
+		httpMethodReturnProduct = "PUT";
 	}
 }
 
@@ -169,7 +191,7 @@ function login(username, password) {
 	console.log("URL to login:\n" + loginUrl);
 
 	// Envoi de la requête de login
-	sendRequest("GET", loginUrl, processLogin);
+	sendRequest(loginHttpMethod, loginUrl, processLogin);
 }
 
 
@@ -191,12 +213,10 @@ function processLogin(response) {
 		setToken(response);
 
 		// Masquage du formulaire de login
-		document.getElementById('signIn').style.display = 'none';
+		hideLogin();
 
 		// Affichage des autres commandes
-		document.getElementById('showProduct').style.display = 'block';
-		document.getElementById('scanWebCodeCamJS').style.display = 'block';
-		document.getElementById('searchProductByName').style.display = 'block';
+		showShowAndSearchProduct();
 	}
 	else {
 		// Le login a échoué, affichage de l'erreur
@@ -209,7 +229,12 @@ function processLogin(response) {
 Récupère le token de la réponse reçue.
 */
 function setToken(response) {
-	theToken = response.token;
+	if (chosenApi == currentProdApi || chosenApi == currentDevApi) {
+		theToken = response.result;
+	}
+	else if (chosenApi == newApi) {
+		theToken = response.token;
+	}
 	console.log("Received token: " + theToken);
 }
 
@@ -233,7 +258,7 @@ function getProductDetails(productId) {
 	console.log("URL to retrieve details of product with ID " + productId + ":\n" + url);
 
 	// Envoi de la requête
-	sendRequest("GET", url, processProductDetails);
+	sendRequest(httpMethodGetProduct, url, processProductDetails);
 }
 
 
@@ -251,17 +276,34 @@ Fonction de callback.
 */
 function processProductDetails(response) {
 	if (isRequestSuccess(response)) {
-		console.log("Product ID: " + response.product.id
-				+ ", product name: " + response.product.name
-				+ ", product description: " + response.product.description
-				+ ", is loan: " + response.product.is_loan);
+		if (chosenApi == currentProdApi || chosenApi == currentDevApi) {
+			var is_loan = response.result.loan ? true : false;
 
-		// Affichage des détails du produit
-		document.getElementById('getProductDetails_response').innerHTML =
-				"ID : " + response.product.id + "<br/>" +
-				"Nom : " + response.product.name + "<br/>" +
-				"Description : " + response.product.description + "<br/>" +
-				"Loué : " + response.product.is_loan;
+			console.log("Product ID: " + response.result.id
+					+ ", product name: " + response.result.name
+					+ ", product description: " + response.result.description
+					+ ", is loan: " + is_loan);
+
+			// Affichage des détails du produit
+			document.getElementById('getProductDetails_response').innerHTML =
+					"ID : " + response.result.id + "<br/>" +
+					"Nom : " + response.result.name + "<br/>" +
+					"Description : " + response.result.description + "<br/>" +
+					"Loué : " + is_loan;
+		}
+		else if (chosenApi == newApi) {
+			console.log("Product ID: " + response.product.id
+					+ ", product name: " + response.product.name
+					+ ", product description: " + response.product.description
+					+ ", is loan: " + response.product.is_loan);
+
+			// Affichage des détails du produit
+			document.getElementById('getProductDetails_response').innerHTML =
+					"ID : " + response.product.id + "<br/>" +
+					"Nom : " + response.product.name + "<br/>" +
+					"Description : " + response.product.description + "<br/>" +
+					"Loué : " + response.product.is_loan;
+		}
 
 		// Affichage de la location et du retour du produit
 		showLoanAndReturn();
@@ -295,7 +337,7 @@ function searchProductByName(term) {
 	console.log("URL to search the product with the name \"" + term + "\":\n" + url);
 
 	// Envoi de la requête
-	sendRequest("GET", url, processSearchProductByName);
+	sendRequest(httpMethodSearchProduct, url, processSearchProductByName);
 }
 
 
@@ -313,35 +355,70 @@ Fonction de callback.
 */
 function processSearchProductByName(response) {
 	if (isRequestSuccess(response)) {
-		console.log("Number of results: " + response.number_results);
-		console.log("Complete response:\n" + JSON.stringify(response));
+		if (chosenApi == currentProdApi || chosenApi == currentDevApi) {
+			console.log("Number of results: " + response.result.total);
+			console.log("Complete response:\n" + JSON.stringify(response));
 
-		// Affichage des résultats
-		var responseSection = document.getElementById('searchProductByName_response');
-		responseSection.innerHTML = "Nombre de résultats : " + response.number_results;
-		responseSection.innerHTML += "</br>";
+			// Affichage des résultats
+			var responseSection = document.getElementById('searchProductByName_response');
+			responseSection.innerHTML = "Nombre de résultats : " + response.result.total;
+			responseSection.innerHTML += "</br>";
 
-		responseSection.innerHTML += "<ul id=\"searchProductByName_list\"></ul>";
-		var resultsListSection = document.getElementById('searchProductByName_list');
-		for (i = 0; i < response.number_results; ++i) {
-			var resultId = "searchProductByName_result" + i;
+			responseSection.innerHTML += "<ul id=\"searchProductByName_list\"></ul>";
+			var resultsListSection = document.getElementById('searchProductByName_list');
+			for (i = 0; i < response.result.total; ++i) {
+				var resultId = "searchProductByName_result" + i;
 
-			resultsListSection.innerHTML +=
-					"<li>" + "<a " + "id=\"" + resultId + "\"" + " href=\"" + "#" + "\">"
-					+ response.results[i].id
-					+ ": "
-					+ response.results[i].name
-					+ "</a>" + "</li>";
+				resultsListSection.innerHTML +=
+						"<li>" + "<a " + "id=\"" + resultId + "\"" + " href=\"" + "#" + "\">"
+						+ response.result.datas[i].id
+						+ ": "
+						+ response.result.datas[i].name
+						+ "</a>" + "</li>";
+			}
+
+			for (i = 0; i < response.result.total; ++i) {
+				resultProductsId[i] = response.result.datas[i].id;
+
+				var resultId = "searchProductByName_result" + i;
+				document.getElementById(resultId).onclick = function(mouseEvent) {
+					// Recherche du produit sélectionné
+					productId = resultProductsId[mouseEvent.srcElement.id["searchProductByName_result".length]];
+					getProductDetails(productId);
+				}
+			}
 		}
+		else if (chosenApi == newApi) {
+			console.log("Number of results: " + response.number_results);
+			console.log("Complete response:\n" + JSON.stringify(response));
 
-		for (i = 0; i < response.number_results; ++i) {
-			resultProductsId[i] = response.results[i].id;
+			// Affichage des résultats
+			var responseSection = document.getElementById('searchProductByName_response');
+			responseSection.innerHTML = "Nombre de résultats : " + response.number_results;
+			responseSection.innerHTML += "</br>";
 
-			var resultId = "searchProductByName_result" + i;
-			document.getElementById(resultId).onclick = function(mouseEvent) {
-				// Recherche du produit sélectionné
-				productId = resultProductsId[mouseEvent.srcElement.id["searchProductByName_result".length]];
-				getProductDetails(productId);
+			responseSection.innerHTML += "<ul id=\"searchProductByName_list\"></ul>";
+			var resultsListSection = document.getElementById('searchProductByName_list');
+			for (i = 0; i < response.number_results; ++i) {
+				var resultId = "searchProductByName_result" + i;
+
+				resultsListSection.innerHTML +=
+						"<li>" + "<a " + "id=\"" + resultId + "\"" + " href=\"" + "#" + "\">"
+						+ response.results[i].id
+						+ ": "
+						+ response.results[i].name
+						+ "</a>" + "</li>";
+			}
+
+			for (i = 0; i < response.number_results; ++i) {
+				resultProductsId[i] = response.results[i].id;
+
+				var resultId = "searchProductByName_result" + i;
+				document.getElementById(resultId).onclick = function(mouseEvent) {
+					// Recherche du produit sélectionné
+					productId = resultProductsId[mouseEvent.srcElement.id["searchProductByName_result".length]];
+					getProductDetails(productId);
+				}
 			}
 		}
 	}
@@ -376,7 +453,7 @@ function loanProduct(productId, beginDate, endDate) {
 			+ ":\n" + url);
 
 	// Envoi de la requête
-	sendRequest("PUT", url, processLoanProduct);
+	sendRequest(httpMethodLoanProduct, url, processLoanProduct);
 }
 
 
@@ -426,7 +503,7 @@ function returnProduct(productId) {
 	console.log("URL to return the product with ID " + productId + ":\n" + url);
 
 	// Envoi de la requête
-	sendRequest("PUT", url, processReturnProduct);
+	sendRequest(httpMethodReturnProduct, url, processReturnProduct);
 }
 
 
@@ -492,6 +569,42 @@ Vérification de la réponse.
 */
 function isRequestSuccess(response) {
 	return response.success;
+}
+
+
+/*
+Affichage de la section de login.
+*/
+function showLogin() {
+	document.getElementById('signIn').style.display = 'block';
+}
+
+
+/*
+Masquage de la section de login.
+*/
+function hideLogin() {
+	document.getElementById('signIn').style.display = 'none';
+}
+
+
+/*
+Affichage des sections Show Product, ScanWebCodeCamJS et Search Product.
+*/
+function showShowAndSearchProduct() {
+	document.getElementById('showProduct').style.display = 'block';
+	document.getElementById('scanWebCodeCamJS').style.display = 'block';
+	document.getElementById('searchProductByName').style.display = 'block';
+}
+
+
+/*
+Masquage des sections Show Product, ScanWebCodeCamJS et Search Product.
+*/
+function hideShowAndSearchProduct() {
+	document.getElementById('showProduct').style.display = 'none';
+	document.getElementById('scanWebCodeCamJS').style.display = 'none';
+	document.getElementById('searchProductByName').style.display = 'none';
 }
 
 
