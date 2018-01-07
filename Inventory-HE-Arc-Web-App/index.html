@@ -51,9 +51,9 @@
 	<div>
 		<canvas id="scanWebCodeCamJSPreview"></canvas>
 		<br/>
-		<select></select>
+		<select class="scanWebCodeCamJS"></select>
 		<br/>
-		<button onclick="scanWebCodeCamJS()">Start scan WebCodeCamJS</button>
+		<button id="buttonScanWebCodeCamJS" />
 	</div>
 	<p id="scanWebCodeCamJS_response"></p>
 </div>
@@ -92,11 +92,13 @@
 
 <hr/>
 
+
 <select id="apiSelection" onchange="selectApi()">
 	<option>API actuelle (prod)</option>
 	<option>API actuelle (dev)</option>
 	<option selected>Nouvelle API</option>
 </select>
+
 
 <script type="text/javascript">
 	// Ajout du focus sur les champs texte et les boutons
@@ -126,7 +128,41 @@
 				searchProductByName_onclick();
 			}
 		}
+
+		// Insertion de la date dans les champs date
+		{
+			// Pré-remplissage du champ de la date de début avec la date actuelle
+			var now = new Date();
+			document.getElementById('beginDate_productId').value = formatDate(now);
+
+			// Pré-remplissage du champ de la date de fin avec la date actuelle + 1 mois
+			now.setMonth(now.getMonth() + 1);
+			document.getElementById('endDate_productId').value = formatDate(now);
+		}
+
+		// Initialisation du scanner WebCodeCamJS
+		initWebCodeCamJS();
 	};
+
+
+	/*
+	Mise en forme d'une date pour l'affectation dans un champ HTML.
+	*/
+	function formatDate(date) {
+		var htmlFormDate = {
+			day : date.getDate(),
+			month : date.getMonth() + 1,
+			year : date.getFullYear()
+		};
+
+		if (htmlFormDate.day < 10)
+			htmlFormDate.day = "0" + htmlFormDate.day;
+
+		if (htmlFormDate.month < 10)
+			htmlFormDate.month = "0" + htmlFormDate.month;
+
+		return htmlFormDate.year + "-" + htmlFormDate.month + "-" + htmlFormDate.day;
+	}
 </script>
 
 </body>
