@@ -32,6 +32,9 @@ Initialisations.
 // Sélection de l'API
 window.addEventListener("load", selectApi);
 
+// Initialisation du scanner WebCodeCamJS
+window.addEventListener("load", initWebCodeCamJS);
+
 
 /*
 Sélection de l'API.
@@ -642,8 +645,19 @@ Scanner WebCodeCamJS
 Démarrage du scanner.
 */
 function startScanWebCodeCamJS() {
+	document.getElementById('scanWebCodeCamJSPreview').style.display = 'block';
 	webCodeCamJSdecoder.play();
 	setButtonToStopScanWebCodeCamJS();
+}
+
+/*
+Scanner WebCodeCamJS
+Arrêt du scanner.
+*/
+function stopScanWebCodeCamJS() {
+	document.getElementById('scanWebCodeCamJSPreview').style.display = 'none';
+	webCodeCamJSdecoder.stop();
+	setButtonToStartScanWebCodeCamJS();
 }
 
 /*
@@ -652,15 +666,6 @@ Mise à jour du bouton pour démarrer le scanner.
 function setButtonToStartScanWebCodeCamJS() {
 	document.getElementById('buttonScanWebCodeCamJS').textContent = "Start scan WebCodeCamJS";
 	document.getElementById('buttonScanWebCodeCamJS').onclick = startScanWebCodeCamJS;
-}
-
-/*
-Scanner WebCodeCamJS
-Arrêt du scanner.
-*/
-function stopScanWebCodeCamJS() {
-	webCodeCamJSdecoder.stop();
-	setButtonToStartScanWebCodeCamJS();
 }
 
 /*
