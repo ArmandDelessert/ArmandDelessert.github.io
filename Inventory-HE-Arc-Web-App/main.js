@@ -35,6 +35,14 @@ window.addEventListener("load", selectApi);
 // Initialisation du scanner WebCodeCamJS
 window.addEventListener("load", initWebCodeCamJS);
 
+// Enregistrement du Service Worker de gestion du cache
+window.addEventListener("load", function() {
+	if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+        .then(function() { console.log('Service Worker registered.'); });
+  }
+});
+
 
 /*
 Sélection de l'API.
