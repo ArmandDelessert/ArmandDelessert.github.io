@@ -13,6 +13,8 @@ var chosenApi;
 /*
 Variables globales.
 */
+var username;
+var password;
 var theToken;
 var productId;
 var resultProductsId = [];
@@ -162,8 +164,8 @@ function login_onclick() {
 	// Username: "devweb.user", "devweb.manager", "devweb.admin"
 	// Password: "123456"
 
-	var username = document.getElementById('login_username').value;
-	var password = document.getElementById('login_password').value;
+	username = document.getElementById('login_username').value;
+	password = document.getElementById('login_password').value;
 	login(username, password);
 }
 
@@ -553,6 +555,9 @@ function showLogin() {
 
 	// Autofocus sur le champ Product ID
 	document.getElementById('login_username').focus();
+
+	// Masquage du nom d'utilisateur
+	document.getElementById('log_informations').style.display = 'none';
 }
 
 
@@ -561,6 +566,10 @@ Masquage de la section de login.
 */
 function hideLogin() {
 	document.getElementById('signIn').style.display = 'none';
+
+	// Affichage du nom d'utilisateur
+	document.getElementById('logged_username').innerHTML = username;
+	document.getElementById('log_informations').style.display = 'block';
 }
 
 
