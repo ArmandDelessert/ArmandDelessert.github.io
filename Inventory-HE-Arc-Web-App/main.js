@@ -53,12 +53,8 @@ function selectApi() {
 	chosenApi = document.getElementById('apiSelection').selectedIndex;
 	buildUrls();
 
-	// Masquage des autres sections
-	hideShowAndSearchProduct();
-	hideLoanAndReturn();
-
-	// Affichage de la section login
-	showLogin();
+	// Déconnexion de l'utilisateur
+	logout();
 }
 
 /*
@@ -93,7 +89,7 @@ function buildUrls() {
 			break;
 		}
 		case currentDevApi: {
-			console.log("To login to the dev API, use the following login informations:\n" +
+			console.log("To log in to the dev API, use the following informations:\n" +
 					"Username: devweb.user or devweb.manager or devweb.admin\n" +
 					"Password: 123456");
 
@@ -123,7 +119,7 @@ function buildUrls() {
 			break;
 		}
 		case newApi: {
-			console.log("To login to the new API on Mockable.io, use the following login informations:\n" +
+			console.log("To log in to the new API on Mockable.io, use the following informations:\n" +
 					"Username: devweb.user\n" +
 					"Password: 123456");
 
@@ -176,8 +172,8 @@ Authentification de l'utilisateur.
 function login(username, password) {
 	// Construction de l'URL de login
 	var loginUrl = makeUrlLogin(username, password);
-	console.log("Login with this username: " + username);
-	console.log("URL to login:\n" + loginUrl);
+	console.log("Log in with this username: " + username);
+	console.log("URL to log in:\n" + loginUrl);
 
 	// Envoi de la requête de login
 	sendRequest(loginHttpMethod, loginUrl, processLogin);
@@ -225,6 +221,30 @@ function setToken(response) {
 		theToken = response.token;
 	}
 	console.log("Received token: " + theToken);
+}
+
+
+/*
+Déconnexion de l'utilisateur.
+Fonction du onclick du bouton de logout.
+*/
+function logout_onclick() {
+	logout();
+}
+
+
+/*
+Déconnexion de l'utilisateur.
+*/
+function logout() {
+	console.log("Log out from this username: " + username);
+
+	// Masquage des autres sections
+	hideShowAndSearchProduct();
+	hideLoanAndReturn();
+
+	// Affichage de la section login
+	showLogin();
 }
 
 
@@ -434,6 +454,7 @@ function loanProduct(productId, beginDate, endDate) {
 
 /*
 Construction de l'URL pour l'emprunt d'un produit.
+Les dates doivent être au format "aaaa-mm-jj".
 */
 function makeUrlLoanProduct(productId, beginDate, endDate) {
 	return urlLoanProduct[0] + theToken + urlLoanProduct[1] + productId
@@ -551,13 +572,14 @@ function isRequestSuccess(response) {
 Affichage de la section de login.
 */
 function showLogin() {
-	document.getElementById('signIn').style.display = 'block';
+	// Affichage de la section de login
+	document.getElementById('login').style.display = 'block';
+
+	// Masquage de la section de logout
+	document.getElementById('logout').style.display = 'none';
 
 	// Autofocus sur le champ Product ID
 	document.getElementById('login_username').focus();
-
-	// Masquage du nom d'utilisateur
-	document.getElementById('log_informations').style.display = 'none';
 }
 
 
@@ -565,11 +587,14 @@ function showLogin() {
 Masquage de la section de login.
 */
 function hideLogin() {
-	document.getElementById('signIn').style.display = 'none';
+	// Masquage de la section de login
+	document.getElementById('login').style.display = 'none';
+
+	// Affichage de la section de logout
+	document.getElementById('logout').style.display = 'block';
 
 	// Affichage du nom d'utilisateur
 	document.getElementById('logged_username').innerHTML = username;
-	document.getElementById('log_informations').style.display = 'block';
 }
 
 

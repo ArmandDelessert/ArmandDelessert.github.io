@@ -22,22 +22,30 @@
 
 <h1>HE-Arc Inventory Web App</h1>
 
-<div id="log_informations" style="display:none">
-	<span>Logged as: </span>
-	<span id="logged_username"></span>
+<hr/>
+
+
+<div id="login">
+	<h2>Please, log in</h2>
+	<div>
+		<input type="text" required name="username" id="login_username" placeholder="Username" value="devweb.user" autofocus>
+		<input type="password" required name="password" id="login_password" placeholder="Password" value="123456">
+		<button onclick="login_onclick()">Log in</button>
+	</div>
+	<p id="login_response"></p>
 </div>
 
 <hr/>
 
 
-<div id="signIn">
-	<h2>Please sign in</h2>
+<div id="logout" style="display:none">
+	<h2>
+		<span>Logged as: </span>
+		<span id="logged_username"></span>
+	</h2>
 	<div>
-		<input type="text" required name="username" id="login_username" placeholder="Username" value="devweb.user" autofocus>
-		<input type="password" required name="password" id="login_password" placeholder="Password" value="123456">
-		<button onclick="login_onclick()">Sign in</button>
+		<button onclick="logout_onclick()">Log out</button>
 	</div>
-	<p id="login_response"></p>
 </div>
 
 <hr/>
