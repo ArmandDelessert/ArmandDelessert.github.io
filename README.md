@@ -4,6 +4,11 @@ This is my own test website.
 * Web page: [ArmandDelessert.github.io](https://armanddelessert.github.io/)
 * Repository: [ArmandDelessert](https://github.com/ArmandDelessert)/[ArmandDelessert.github.io](https://github.com/ArmandDelessert/ArmandDelessert.github.io)
 
+## Live Audio Transcription
+Test du lecteur multimédia *Wowza Player*.
+
+* [Page de test du lecteur multimédia *Wowza Player*](armanddelessert.github.io/LiveAudioTranscription/index.html)
+
 ## Inventory-HE-Arc-Web-App
 Application web pour la gestion des emprunts et des retours de matériel de l'inventaire de l'HE-Arc.
 
