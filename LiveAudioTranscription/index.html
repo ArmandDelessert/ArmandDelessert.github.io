@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Live Audio Transcription</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#2864B4"/>
+
+	<link rel="stylesheet" href="css/foundation.css">
+	<!--<link rel="manifest" href="manifest.json">-->
+	<!--<link rel="icon" type="image/png" href="images/icon_32px.png">-->
+
+	<!--<script type="text/javascript" src="main.js"></script>-->
+	<script type="text/javascript" src="https://player.wowza.com/player/latest/wowzaplayer.min.js"></script>
+</head>
+
+<body>
+
+<h1>Live Audio Transcription</h1>
+
+<hr/>
+
+<div id="playerElement" style="width:100%; height:0; padding:0 0 56.25% 0"></div>
+
+	<script type="text/javascript">
+		WowzaPlayer.create('playerElement',
+		{
+			"license":"PLAY1-9FyM8-zdEtY-J9kJD-VVwmF-eNNrz",
+			"title":"Test Wowza Player",
+			"description":"Test du Wowza Player.",
+			"sourceURL":"http%3A%2F%2F10.10.6.6%3A1935%2Fvod%2Fmp4%3Asample.mp4%2Fplaylist.m3u8",
+			"autoPlay":false,
+			"volume":"75",
+			"mute":false,
+			"loop":false,
+			"audioOnly":false,
+			"uiShowQuickRewind":true,
+			"uiQuickRewindSeconds":"30"
+		});
+	</script>
+
+</body>
+
+</html>
