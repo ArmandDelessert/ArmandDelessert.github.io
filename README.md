@@ -7,7 +7,7 @@ This is my own test website.
 ## Live Audio Transcription
 Test du lecteur multimédia *Wowza Player*.
 
-* [Page de test du lecteur multimédia *Wowza Player*](armanddelessert.github.io/LiveAudioTranscription/index.html)
+* [Page de test du lecteur multimédia *Wowza Player*](https://armanddelessert.github.io/LiveAudioTranscription/index.html)
 
 ## Inventory-HE-Arc-Web-App
 Application web pour la gestion des emprunts et des retours de matériel de l'inventaire de l'HE-Arc.
