@@ -9,12 +9,12 @@ This is my own test website.
 
 * [Science & Vie](https://www.science-et-vie.com/)
   * [Archives par numéro](https://www.science-et-vie.com/archives-par-numero)
-* [Liste des magazines Science & Vie](Science&Vie/Science&Vie.html)
+* [Liste des magazines Science & Vie](https://armanddelessert.github.io/Science&Vie/Science&Vie.html)
 
 ## Collection des dessins de Burki
 
 * [Le Trait](https://letrait.ch/)
-* [Liste des dessins de Burki](DessinsBurki/DessinsBurki.html)
+* [Liste des dessins de Burki](https://armanddelessert.github.io/DessinsBurki/DessinsBurki.html)
 
 ## Live Audio Transcription
 
@@ -27,7 +27,7 @@ Test du lecteur multimédia *Wowza Player*.
 Application web pour la gestion des emprunts et des retours de matériel de l'inventaire de l'HE-Arc.
 
 * [HE-Arc](https://github.com/HE-Arc)/[Inventory-HE-Arc-Web-App](https://github.com/HE-Arc/Inventory-HE-Arc-Web-App)
-* [README](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/Inventory-HE-Arc-Web-App/README.md)
+* [README](Inventory-HE-Arc-Web-App/README.md)
 * [Sample Codes](Inventory-HE-Arc-Web-App/SampleCodes.md)
 
 ### Page de gestion de l'inventaire
