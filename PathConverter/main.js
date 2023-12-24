@@ -1,18 +1,23 @@
+const PathUrlParam = 'path';
+const RedirectUrlParam = 'redirect';
+const InputPathId = 'inputPath';
+const OutputPathId = 'outputPath';
+
 function loadPathFromURL() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var path = urlParams.get('path');
-    var redirect = urlParams.get('redirect');
+    let urlParams = new URLSearchParams(window.location.search);
+    let path = urlParams.get(PathUrlParam);
+    let redirect = urlParams.get(RedirectUrlParam);
     if (path) {
-        document.getElementById('inputPath').value = decodeURIComponent(path);
-        convertPath();
+        document.getElementById(InputPathId).value = decodeURIComponent(path);
+        convertAndSetPath();
         if (redirect === 'true') {
-            window.location.href = document.getElementById('outputPath').value;
+            window.location.href = document.getElementById(OutputPathId).value;
         }
     }
 }
 
-function convertPath() {
-    var path = document.getElementById('inputPath').value;
-    var uri = path.replace(/\\/g, "/").replace(/^([a-zA-Z]):/, 'file:///$1:');
-    document.getElementById('outputPath').value = uri;
+function convertAndSetPath() {
+    let path = document.getElementById(InputPathId).value;
+    let uri = path.replace(/\\/g, "/").replace(/^([a-zA-Z]):/, 'file:///$1:');
+    document.getElementById(OutputPathId).value = uri;
 }
