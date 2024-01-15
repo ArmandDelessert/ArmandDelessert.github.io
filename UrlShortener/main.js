@@ -38,15 +38,7 @@ function generateShortUrl() {
 }
 
 function isValidUrl(url) {
-    return true; // DEBUG
-
-    let urlPattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-        '(((a-z\\d*)\\.)+[a-z]{2,}|'+ // domain name and extension
-        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-        '(\\:\\d+)?'+ // port
-        '(\\/[-a-z\\d%@_.~+&:]*)*'+ // path
-        '(\\?[;&a-z\\d%@_.,~+&:=-]*)?'+ // query string
-        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    let urlPattern = new RegExp('^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$');
     return !!urlPattern.test(url);
 }
 
