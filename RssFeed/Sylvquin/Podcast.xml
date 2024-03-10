@@ -4,19 +4,27 @@
   <title>Le podcast des soutiens de Sylvqin</title>
   <link>https://gist.github.com/ArmandDelessert/25f045dd6ef71830651bd8d52c4db231</link>
   <description>
-    Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.
-    Sites web :
-    - <a href="https://sylvain.zip/">sylvain.zip</a>
-    - <a href="https://sylvq.in/">sylvq.in</a>
-    Réseaux sociaux :
-    - YouTube : <a href="https://www.youtube.com/sylvqin">Sylvqin</a>, <a href="https://www.youtube.com/@administrateur">Sylvdeux</a>
-    - Twitter : <a href="https://www.twitter.com/sylvqin">@Sylvqin</a>
-    - Instagram : <a href="https://www.instagram.com/sylvqin">@sylvqin</a>
-    - TikTok : <a href="https://www.tiktok.com/@sylvq1">@sylvq1</a>
-    - Discord : <a href="https://www.discord.com/invite/MrQYQRV9F5">SYLVZONE</a>
-    Soutenir :
-    - <a href="https://fr.tipeee.com/sylvqin">Tipeee</a>
-    - <a href="https://www.patreon.com/Sylvqin">Patreon</a>
+    <ul>
+      <li>Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.</li>
+      <li>Sites web :</li>
+      <ul>
+        <li><a href="https://sylvain.zip/">sylvain.zip</a></li>
+        <li><a href="https://sylvq.in/">sylvq.in</a></li>
+      </ul>
+      <li>Réseaux sociaux :</li>
+      <ul>
+        <li>YouTube : <a href="https://www.youtube.com/sylvqin">Sylvqin</a>, <a href="https://www.youtube.com/@administrateur">Sylvdeux</a></li>
+        <li>Twitter : <a href="https://www.twitter.com/sylvqin">@Sylvqin</a></li>
+        <li>Instagram : <a href="https://www.instagram.com/sylvqin">@sylvqin</a></li>
+        <li>TikTok : <a href="https://www.tiktok.com/@sylvq1">@sylvq1</a></li>
+        <li>Discord : <a href="https://www.discord.com/invite/MrQYQRV9F5">SYLVZONE</a></li>
+      </ul>
+      <li>Soutenir :</li>
+      <ul>
+        <li><a href="https://fr.tipeee.com/sylvqin">Tipeee</a></li>
+        <li><a href="https://www.patreon.com/Sylvqin">Patreon</a></li>
+      </ul>
+    </ul>
   </description>
   <language>fr</language>
   <webMaster>bonsoir@sylvq.in</webMaster>
