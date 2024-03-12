@@ -2,7 +2,7 @@
 <rss version="2.0">
 <channel>
   <title>Le podcast des soutiens de Sylvqin</title>
-  <link>https://gist.github.com/ArmandDelessert/25f045dd6ef71830651bd8d52c4db231</link>
+  <link>https://rawcdn.githack.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Podcast.xml</link>
   <description>
     <ul>
       <li>Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.</li>
@@ -31,7 +31,7 @@
   <image>
     <title>Le podcast des soutiens de Sylvqin</title>
     <url>https://as1.ftcdn.net/v2/jpg/05/02/56/24/1000_F_502562461_MeEP2osaqTRGQ7aZAjJbguV9GMC4jo7M.jpg</url>
-    <link>https://gist.github.com/ArmandDelessert/25f045dd6ef71830651bd8d52c4db231</link>
+    <link>https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.md</link>
   </image>
   <item>
     <title>Épisode 1 - Prizee et CPF</title>
