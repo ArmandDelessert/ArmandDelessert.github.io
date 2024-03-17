@@ -76,6 +76,10 @@ Date : 1 février 2024
 - [YouTube](https://www.youtube.com/watch?v=6pGrB0WfqFk)
 - [Google Drive](https://drive.google.com/file/d/1bT0LHtE1FGwMZeW9mwX9ciUdfp4lVMzw/view)
 
+## Flux RSS
+
+[RSS feed](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.xml)
+
 ## Liens
 
 ### Sites
