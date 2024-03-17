@@ -78,7 +78,7 @@ Date : 1 février 2024
 
 ## Flux RSS
 
-[RSS feed](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
+[Flux RSS](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
 
 ## Liens
 
