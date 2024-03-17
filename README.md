@@ -44,6 +44,6 @@ Application web pour la gestion des emprunts et des retours de matériel de l'in
 
 ## Podcast Sylvqin
 
-[Podcast Sylvqin](https://ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.md)
+[Podcast Sylvqin](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.md)
 
-[RSS feed](https://ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.xml)
+[RSS feed](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
