@@ -41,3 +41,9 @@ Application web pour la gestion des emprunts et des retours de matériel de l'in
 ### Page de gestion de l'inventaire
 
 * [HE-Arc/Inventory-HE-Arc-Web-App/index.html](https://armanddelessert.github.io/Inventory-HE-Arc-Web-App/index.html)
+
+## Podcast Sylvqin
+
+[Podcast Sylvqin](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.md)
+
+[RSS feed](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.xml)
