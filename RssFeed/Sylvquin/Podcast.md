@@ -76,6 +76,13 @@ Date : 1 février 2024
 - [YouTube](https://www.youtube.com/watch?v=6pGrB0WfqFk)
 - [Google Drive](https://drive.google.com/file/d/1bT0LHtE1FGwMZeW9mwX9ciUdfp4lVMzw/view)
 
+### Épisode 11 - Fabuleux, légendaire : le retour
+
+Date : 18 mars 2024
+
+- [YouTube](https://www.youtube.com/watch?v=VUa9mCbcWBk)
+- [Google Drive](https://drive.google.com/file/d/1hiEStiirukKMCpnzowEKd308MOu2d71C/view)
+
 ## Flux RSS
 
 [Flux RSS](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
