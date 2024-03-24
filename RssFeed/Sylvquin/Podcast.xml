@@ -371,7 +371,7 @@
       </description>
       <link>https://www.youtube.com/watch?v=VUa9mCbcWBk</link>
       <enclosure
-        url="https://drive.usercontent.google.com/download?id=1hiEStiirukKMCpnzowEKd308MOu2d71C&export=download&authuser=0"
+        url="https://drive.usercontent.google.com/download?id=1hiEStiirukKMCpnzowEKd308MOu2d71C&amp;export=download&amp;authuser=0"
         type="audio/mpeg"/>
     </item>
   </channel>
