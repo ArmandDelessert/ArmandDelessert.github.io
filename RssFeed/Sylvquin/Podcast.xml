@@ -341,5 +341,38 @@
         url="https://drive.usercontent.google.com/download?id=1bT0LHtE1FGwMZeW9mwX9ciUdfp4lVMzw&amp;export=download&amp;authuser=0"
         type="audio/mpeg"/>
     </item>
+    <item>
+      <title>Épisode 11 - Fabuleux, légendaire : le retour</title>
+      <pubDate>Sun, 18 Mar 2024 00:00:00 GMT</pubDate>
+      <description>
+        <![CDATA[
+        <ul>
+          <li>Épisode 11 du podcast culte des soutiens de Sylvqin.</li>
+          <li>Sites web :</li>
+          <ul>
+            <li><a href="https://sylvain.zip/">sylvain.zip</a></li>
+            <li><a href="https://sylvq.in/">sylvq.in</a></li>
+          </ul>
+          <li>Réseaux sociaux :</li>
+          <ul>
+            <li>YouTube : <a href="https://www.youtube.com/sylvqin">Sylvqin</a>, <a href="https://www.youtube.com/@administrateur">Sylvdeux</a></li>
+            <li>Twitter : <a href="https://www.twitter.com/sylvqin">@Sylvqin</a></li>
+            <li>Instagram : <a href="https://www.instagram.com/sylvqin">@sylvqin</a></li>
+            <li>TikTok : <a href="https://www.tiktok.com/@sylvq1">@sylvq1</a></li>
+            <li>Discord : <a href="https://www.discord.com/invite/MrQYQRV9F5">SYLVZONE</a></li>
+          </ul>
+          <li>Soutenir :</li>
+          <ul>
+            <li><a href="https://fr.tipeee.com/sylvqin">Tipeee</a></li>
+            <li><a href="https://www.patreon.com/Sylvqin">Patreon</a></li>
+          </ul>
+        </ul>
+        ]]>
+      </description>
+      <link>https://www.youtube.com/watch?v=VUa9mCbcWBk</link>
+      <enclosure
+        url="https://drive.usercontent.google.com/download?id=1hiEStiirukKMCpnzowEKd308MOu2d71C&export=download&authuser=0"
+        type="audio/mpeg"/>
+    </item>
   </channel>
 </rss>
