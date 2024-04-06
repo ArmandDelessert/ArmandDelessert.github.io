@@ -83,6 +83,10 @@ Date : 18 mars 2024
 - [YouTube](https://www.youtube.com/watch?v=VUa9mCbcWBk)
 - [Google Drive](https://drive.google.com/file/d/1hiEStiirukKMCpnzowEKd308MOu2d71C/view)
 
+## Playlist YouTube
+
+[Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
+
 ## Flux RSS
 
 [Flux RSS](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
