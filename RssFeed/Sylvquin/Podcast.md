@@ -83,6 +83,13 @@ Date : 18 mars 2024
 - [YouTube](https://www.youtube.com/watch?v=VUa9mCbcWBk)
 - [Google Drive](https://drive.google.com/file/d/1hiEStiirukKMCpnzowEKd308MOu2d71C/view)
 
+### Épisode 12 - L'Après Empress
+
+Date : 12 avril 2024
+
+- [YouTube](https://www.youtube.com/watch?v=GtbQ4QEPoNE)
+- [Google Drive](https://drive.google.com/file/d/1dZA2H5l77jl-apZ2oE5Bor474yo6RCso/view)
+
 ## Playlist YouTube
 
 [Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
