@@ -86,7 +86,7 @@ Date : 1 février 2024
 - [Google Drive](https://drive.google.com/file/d/1bT0LHtE1FGwMZeW9mwX9ciUdfp4lVMzw/view) (format MP3)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_10.mp3) (format MP3)
 
-### Épisode 11 - Fabuleux, légendaire : le retour
+### Épisode 11 - Fabuleux, légendaire… le retour
 
 Date : 18 mars 2024
 
@@ -94,7 +94,7 @@ Date : 18 mars 2024
 - [Google Drive](https://drive.google.com/file/d/1hiEStiirukKMCpnzowEKd308MOu2d71C/view) (format MP3)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_11.mp3) (format MP3)
 
-### Épisode 12 - L'Après Empress
+### Épisode 12 - L'Après Empress !!
 
 Date : 12 avril 2024
 
