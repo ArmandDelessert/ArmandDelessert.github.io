@@ -26,7 +26,7 @@ This is my own test website.
 
 ## Podcasts
 
-* [Le podcast des soutiens de Sylvqin](https://armanddelessert.github.io/RssFeed/Sylvquin/Podcast.md)
+* [Le podcast des soutiens de Sylvqin](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.md)
 
 ## Live Audio Transcription
 
