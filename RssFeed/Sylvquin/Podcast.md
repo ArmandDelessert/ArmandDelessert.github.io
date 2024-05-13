@@ -39,7 +39,8 @@ Date : 29 novembre 2022
 Date : 20 février 2023
 
 - [YouTube](https://www.youtube.com/watch?v=a5cDwzh55CY)
-- [Google Drive](https://drive.google.com/file/d/1xhRArqN7mRI_Tmqq_05Sx9xJA8vIG8pr/view)
+- [Google Drive](https://drive.google.com/file/d/1xhRArqN7mRI_Tmqq_05Sx9xJA8vIG8pr/view) (format WAV)
+- [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_5.mp3) (format MP3)
 
 ### Épisode 6 - On vous a pas oubliés
 
@@ -95,6 +96,7 @@ Date : 12 avril 2024
 Date : 10 mai 2024
 
 - [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
+- [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_12.mp3) (format MP3)
 
 ## Playlist YouTube
 
