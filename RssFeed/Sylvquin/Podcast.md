@@ -95,7 +95,6 @@ Date : 12 avril 2024
 Date : 10 mai 2024
 
 - [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
-- [Google Drive](https://drive.google.com/file/d//view)
 
 ## Playlist YouTube
 
