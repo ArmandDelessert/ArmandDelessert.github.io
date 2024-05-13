@@ -90,6 +90,13 @@ Date : 12 avril 2024
 - [YouTube](https://www.youtube.com/watch?v=GtbQ4QEPoNE)
 - [Google Drive](https://drive.google.com/file/d/1dZA2H5l77jl-apZ2oE5Bor474yo6RCso/view)
 
+### Épisode 13 - Chacun porte sa croix (de pharmacie)
+
+Date : 10 mai 2024
+
+- [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
+- [Google Drive](https://drive.google.com/file/d//view)
+
 ## Playlist YouTube
 
 [Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
