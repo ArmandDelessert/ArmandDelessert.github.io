@@ -8,7 +8,7 @@ Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.
 
 ### Épisode 1 - Prizee et CPF
 
-Date : 27 août 2022
+Publication : 27 août 2022 14:55:45
 
 - [YouTube](https://www.youtube.com/watch?v=j5BcqfIpnTM)
 - [Google Drive](https://drive.google.com/file/d/11MgJIPaUJDncHX9ZMIXiVeSAjqcud6Ux/view) (format MP3)
@@ -16,7 +16,7 @@ Date : 27 août 2022
 
 ### Épisode 2 - Souris, Fuchsia et Sponsors
 
-Date : 5 octobre 2022
+Publication : 5 octobre 2022 15:01:15
 
 - [YouTube](https://www.youtube.com/watch?v=_YPl3frkB_8)
 - [Google Drive](https://drive.google.com/file/d/1DbpzaXYlJAJZSLRet6flh23E-y-ZlJxI/view) (format MP3)
@@ -24,7 +24,7 @@ Date : 5 octobre 2022
 
 ### Épisode 3 - Des hauts et des bas
 
-Date : 28 octobre 2022
+Publication : 28 octobre 2022 17:07:52
 
 - [YouTube](https://www.youtube.com/watch?v=j-qRoML7Ibw)
 - [Google Drive](https://drive.google.com/file/d/1bfF-nDhvn-LH-oKe3bSwLQgoQTjdRfux/view) (format MP3)
@@ -32,7 +32,7 @@ Date : 28 octobre 2022
 
 ### Épisode 4 - McDo, Certifs et Sponsors
 
-Date : 29 novembre 2022
+Publication : 29 novembre 2022 13:54:03
 
 - [YouTube](https://www.youtube.com/watch?v=-eW0SJe2B3U)
 - [Google Drive](https://drive.google.com/file/d/1RQpD7tfocO5WPOcWysaOuRFdc7QYlXIO/view) (format MP3)
@@ -40,7 +40,7 @@ Date : 29 novembre 2022
 
 ### Épisode 5 - La Reprise
 
-Date : 20 février 2023
+Publication : 20 février 2023 16:49:03
 
 - [YouTube](https://www.youtube.com/watch?v=a5cDwzh55CY)
 - [Google Drive](https://drive.google.com/file/d/1xhRArqN7mRI_Tmqq_05Sx9xJA8vIG8pr/view) (format WAV)
@@ -48,7 +48,7 @@ Date : 20 février 2023
 
 ### Épisode 6 - On vous a pas oubliés
 
-Date : 2 mai 2023
+Publication : 2 mai 2023 20:45:18
 
 - [YouTube](https://www.youtube.com/watch?v=-IERxQW_JOA)
 - [Google Drive](https://drive.google.com/file/d/1AMWeQBaT5basVB_fi6WnPHOjIn0Atyqk/view) (format MP3)
@@ -56,7 +56,7 @@ Date : 2 mai 2023
 
 ### Épisode 7 - Faux chèque et multiples activités
 
-Date : 20 juin 2023
+Publication : 20 juin 2023 12:22:08
 
 - [YouTube](https://www.youtube.com/watch?v=2S1z0XA5ytg)
 - [Google Drive](https://drive.google.com/file/d/1_k69yxIQgA3q4wcqmSCgNeq4r2KrbZl1/view) (format MP3)
@@ -64,7 +64,7 @@ Date : 20 juin 2023
 
 ### Épisode 8 - Le retour d'été
 
-Date : 22 septembre 2023
+Publication : 22 septembre 2023 16:56:56
 
 - [YouTube](https://www.youtube.com/watch?v=MvEJv101MDE)
 - [Google Drive](https://drive.google.com/file/d/16s9l1WMtHfSryYqJ-Ao6R4QKXass3H9A/view) (format MP3)
@@ -72,7 +72,7 @@ Date : 22 septembre 2023
 
 ### Épisode 9 - Ho ho ho
 
-Date : 19 décembre 2023
+Publication : 19 décembre 2023 16:03:51
 
 - [YouTube](https://www.youtube.com/watch?v=vFOoKbhGX80)
 - [Google Drive](https://drive.google.com/file/d/1ZOSQR4hp63bbqTj6lodzaWmN6QNm6eIU/view) (format MP3)
@@ -80,7 +80,7 @@ Date : 19 décembre 2023
 
 ### Épisode 10 - En temps et en heure
 
-Date : 1 février 2024
+Publication : 1 février 2024 14:34:28
 
 - [YouTube](https://www.youtube.com/watch?v=6pGrB0WfqFk)
 - [Google Drive](https://drive.google.com/file/d/1bT0LHtE1FGwMZeW9mwX9ciUdfp4lVMzw/view) (format MP3)
@@ -88,7 +88,7 @@ Date : 1 février 2024
 
 ### Épisode 11 - Fabuleux, légendaire… le retour
 
-Date : 18 mars 2024
+Publication : 18 mars 2024 11:31:30
 
 - [YouTube](https://www.youtube.com/watch?v=VUa9mCbcWBk)
 - [Google Drive](https://drive.google.com/file/d/1hiEStiirukKMCpnzowEKd308MOu2d71C/view) (format MP3)
@@ -96,7 +96,7 @@ Date : 18 mars 2024
 
 ### Épisode 12 - L'Après Empress !!
 
-Date : 12 avril 2024
+Publication : 12 avril 2024 16:52:16
 
 - [YouTube](https://www.youtube.com/watch?v=GtbQ4QEPoNE)
 - [Google Drive](https://drive.google.com/file/d/1dZA2H5l77jl-apZ2oE5Bor474yo6RCso/view) (format MP3)
@@ -104,7 +104,7 @@ Date : 12 avril 2024
 
 ### Épisode 13 - Chacun porte sa croix (de pharmacie)
 
-Date : 10 mai 2024
+Publication : 10 mai 2024 10:45:30
 
 - [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_13.mp3) (format MP3)
