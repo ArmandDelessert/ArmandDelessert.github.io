@@ -109,6 +109,13 @@ Publication : 10 mai 2024 10:45:30
 - [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_13.mp3) (format MP3)
 
+### Épisode 14 - Tuning de croix
+
+Publication : 12 juin 2024 13:12:29
+
+- [YouTube](https://www.youtube.com/watch?v=nHIlIGXdmz0)
+- [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_14.mp3) (format MP3)
+
 ## Playlist YouTube
 
 [Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
