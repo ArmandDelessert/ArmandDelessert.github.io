@@ -140,6 +140,8 @@ Publication : 12 juin 2024 13:12:29
 
 [Flux RSS](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Podcast.xml)
 
+[![Validate this RSS feed](../valid-rss-rogers.png)](https://www.rssboard.org/rss-validator/check.cgi?url=https%3A%2F%2Farmanddelessert.github.io%2FRssFeed%2FSylvquin%2FPodcast.xml)
+
 ## Liens
 
 ### Sites

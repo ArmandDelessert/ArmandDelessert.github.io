@@ -81,3 +81,5 @@ En 2019, la présentation du Pacte Vert par la Commission européenne fait souff
 ## Flux RSS
 
 [Flux RSS](https://ArmandDelessert.github.io/RssFeed/FranceInfo/Les%20Rat%C3%A9s%20du%20climat/Podcast.xml)
+
+[![Validate this RSS feed](../../valid-rss-rogers.png)](https://www.rssboard.org/rss-validator/check.cgi?url=https%3A//armanddelessert.github.io/RssFeed/FranceInfo/Les%2520Rat%25C3%25A9s%2520du%2520climat/Podcast.xml)
