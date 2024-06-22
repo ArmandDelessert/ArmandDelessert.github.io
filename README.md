@@ -27,6 +27,7 @@ This is my own test website.
 ## Podcasts
 
 * [Le podcast des soutiens de Sylvqin](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/Sylvquin/Podcast.md)
+* [Les Ratés du climat - franceinfo](https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/FranceInfo/Les%20Rat%C3%A9s%20du%20climat/Podcast.md)
 
 ## Live Audio Transcription
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Les Ratés du climat</title>
+        <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+        <description>Quels sont les grands ratés de la lutte contre le changement climatique ? François Gemenne et ses invités vous démontrent comment nous sommes, au cours des 40 dernières années, plusieurs fois passés à côté de décisions qui auraient pu éviter la situation dans laquelle nous sommes aujourd’hui. Présenté par François Gemenne.</description>
+        <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/</link>
+        <language>fr</language>
+        <image>
+            <title>Les Ratés du climat</title>
+            <url>https://www.radiofrance.fr/s3/cruiser-production-eu3/2024/06/252f8cfa-1bcd-483a-ade2-a46b412c6250/400x400_sc_finfo-lesrateduclimat-vignette-1400x1400.jpg</url>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/</link>
+        </image>
+        <item>
+            <title>Épisode 1/6 : le fiasco de la COP15 de Copenhague</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>En décembre 2009, la COP15 réunit les délégations de 193 États. L'objectif principal est de négocier un accord international qui pourra remplacer le Protocole de Kyoto. Mais cette conférence des parties sur le climat sera un échec.</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/le-fiasco-de-la-cop15-de-copenhague_6596022.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0002-21.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+            <title>Épisode 2/6 : la laborieuse ratification du Protocole de Kyoto</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>En 1997, le Protocole de Kyoto, premier traité international qui impose aux pays industrialisés des réductions impératives de leurs émissions de gaz à effet de serre, est adopté. Mais il ne sera ratifié qu’au bout d’un épuisant processus qui durera 8 ans, pendant lesquels il perdra beaucoup de sa crédibilité.</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/la-laborieuse-ratification-du-protocole-de-kyoto_6596016.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0003-21.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+            <title>Épisode 3/6 : des rapports qui remplissent les tiroirs, dès 1979, la science ignorée</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>En 1979, le rapport Jule Charney, confirme le scénario de réchauffement climatique. Et pourtant, rien ne se passe. Pourquoi cette occasion manquée ?</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/des-rapports-qui-remplissent-les-tiroirs-des-1979-la-science-ignoree_6596010.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0004-21.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+            <title>Épisode 4/6 : l'élection manquée d'Al Gore</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>Aux États-Unis, Al Gore a longtemps été l'un des rares dirigeants à se préoccuper du changement climatique. Mais en 2000, il perd l'élection présidentielle face à George W. Bush. Que se serait-il passé si Al Gore avait été élu ?</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/l-election-manquee-d-al-gore_6596001.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0005-21.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+            <title>Épisode 5/6 : la longue errance de la taxe carbone</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>Afin de réguler les émissions de gaz à effet de serre, la plupart des économistes soutenaient la mise en place d'une taxe carbone. Mais les négociations internationales ont préféré les mécanismes de marché que défendaient les Américains. Que reste-t-il de la taxe carbone aujourd’hui ?</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/la-longue-errance-de-la-taxe-carbone_6595995.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0006-21.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+            <title>Épisode 6/6 : qui veut la peau du Green Deal ?</title>
+            <pubDate>Wed, 12 Jun 2024 05:00:00 GMT</pubDate>
+            <description>En 2019, la présentation du Pacte Vert par la Commission européenne fait souffler une nouvelle ambition pour la lutte contre le changement climatique au niveau européen. Mais cinq ans plus tard, ce Pacte est contesté de toutes parts. Que s'est-il passé ?</description>
+            <link>https://www.francetvinfo.fr/replay-radio/les-rates-du-climat/qui-veut-la-peau-du-green-deal_6595989.html</link>
+            <enclosure url="https://media.radiofrance-podcast.net/podcast09/24838-12.06.2024-ITEMA_23768891-2024I53149E0007-21.mp3" type="audio/mpeg"/>
+        </item>
+    </channel>
+</rss>
