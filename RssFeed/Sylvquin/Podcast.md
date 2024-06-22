@@ -1,5 +1,7 @@
 # Le podcast des soutiens de Sylvqin
 
+![Couverture du podcast](https://ArmandDelessert.github.io/RssFeed/Sylvquin/Covers/Cover_1b6786d8-05e3-41d1-b64b-15d15cd1b0c6.jpeg)
+
 ## Description
 
 Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.
