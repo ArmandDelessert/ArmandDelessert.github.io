@@ -132,6 +132,15 @@ Publication : 12 juin 2024 13:12:29
 - [YouTube](https://www.youtube.com/watch?v=nHIlIGXdmz0)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_14.mp3) (format MP3)
 
+### Épisode 15 - Y'a des pharmaciens dans les Tippos ?
+
+Publication : 11 septembre 2024 15:18:53
+
+- [Tipeee](https://fr.tipeee.com/sylvqin/news/207639)
+- [YouTube](https://www.youtube.com/watch?v=JpsK-Le86qk)
+- [Google Drive](https://drive.google.com/file/d/1VzgnRVMsbbzjeBNEIhLM8Pvojl2rxlPB/view) (format MP3)
+- [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_15.mp3) (format MP3)
+
 ## Playlist YouTube
 
 [Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
