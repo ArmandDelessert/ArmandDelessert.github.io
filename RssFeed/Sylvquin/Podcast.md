@@ -141,6 +141,12 @@ Publication : Mercredi 11 septembre 2024 15:18:53
 - [Google Drive](https://drive.google.com/file/d/1VzgnRVMsbbzjeBNEIhLM8Pvojl2rxlPB/view) (format MP3)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_15.mp3) (format MP3)
 
+### Épisode 16 - Un retard, quel retard ?
+
+- [Tipeee](https://fr.tipeee.com/sylvqin/news/213209)
+- [YouTube](https://www.youtube.com/watch?v=37iOH-bQnpw)
+- [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_16.mp3) (format MP3)
+
 ## Playlist YouTube
 
 [Playlist YouTube](https://www.youtube.com/playlist?list=PLU0vpugYYFUrtBnjxPAZFRKKG89RqgKUm)
