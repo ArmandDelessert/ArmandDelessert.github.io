@@ -170,7 +170,7 @@ Publication : Mardi 19 novembre 2024 11:15:16
 
 #### YouTube
 
-- [Sylvqin](https://www.youtube.com/sylvqin)
+- [Sylvqin](https://www.youtube.com/@Sylvqin)
 - [Sylvdeux](https://www.youtube.com/@administrateur)
 
 #### Twitter
