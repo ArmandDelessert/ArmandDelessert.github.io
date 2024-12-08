@@ -143,6 +143,8 @@ Publication : Mercredi 11 septembre 2024 15:18:53
 
 ### Épisode 16 - Un retard, quel retard ?
 
+Publication : Mardi 19 novembre 2024 11:15:16
+
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/213209)
 - [YouTube](https://www.youtube.com/watch?v=37iOH-bQnpw)
 - [GitHub](https://raw.githubusercontent.com/ArmandDelessert/ArmandDelessert.github.io/master/RssFeed/Sylvquin/Files/%C3%89pisode_16.mp3) (format MP3)
