@@ -10,7 +10,7 @@ Le podcast culte, réservé aux soutiens de la chaîne YouTube Sylvqin.
 
 ### Épisode 1 - Prizee et CPF
 
-Publication : Samedi 27 août 2022 14:55:45
+Publication : Samedi 27 août 2022 14:55:45 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/148727)
 - [YouTube](https://www.youtube.com/watch?v=j5BcqfIpnTM)
@@ -19,7 +19,7 @@ Publication : Samedi 27 août 2022 14:55:45
 
 ### Épisode 2 - Souris, Fuchsia et Sponsors
 
-Publication : Mercredi 5 octobre 2022 15:01:15
+Publication : Mercredi 5 octobre 2022 15:01:15 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/150775)
 - [YouTube](https://www.youtube.com/watch?v=_YPl3frkB_8)
@@ -28,7 +28,7 @@ Publication : Mercredi 5 octobre 2022 15:01:15
 
 ### Épisode 3 - Des hauts et des bas
 
-Publication : Vendredi 28 octobre 2022 17:07:52
+Publication : Vendredi 28 octobre 2022 17:07:52 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/152000)
 - [YouTube](https://www.youtube.com/watch?v=j-qRoML7Ibw)
@@ -37,7 +37,7 @@ Publication : Vendredi 28 octobre 2022 17:07:52
 
 ### Épisode 4 - McDo, Certifs et Sponsors
 
-Publication : Mardi 29 novembre 2022 13:54:03
+Publication : Mardi 29 novembre 2022 13:54:03 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/153605)
 - [YouTube](https://www.youtube.com/watch?v=-eW0SJe2B3U)
@@ -46,7 +46,7 @@ Publication : Mardi 29 novembre 2022 13:54:03
 
 ### Épisode 5 - La Reprise
 
-Publication : Lundi 20 février 2023 16:49:03
+Publication : Lundi 20 février 2023 16:49:03 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/157575)
 - [YouTube](https://www.youtube.com/watch?v=a5cDwzh55CY)
@@ -55,7 +55,7 @@ Publication : Lundi 20 février 2023 16:49:03
 
 ### Épisode 6 - On vous a pas oubliés
 
-Publication : Mardi 2 mai 2023 20:45:18
+Publication : Mardi 2 mai 2023 20:45:18 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/161062)
 - [YouTube](https://www.youtube.com/watch?v=-IERxQW_JOA)
@@ -64,7 +64,7 @@ Publication : Mardi 2 mai 2023 20:45:18
 
 ### Épisode 7 - Faux chèque et multiples activités
 
-Publication : Mardi 20 juin 2023 12:22:08
+Publication : Mardi 20 juin 2023 12:22:08 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/165051)
 - [YouTube](https://www.youtube.com/watch?v=2S1z0XA5ytg)
@@ -73,7 +73,7 @@ Publication : Mardi 20 juin 2023 12:22:08
 
 ### Épisode 8 - Le retour d'été
 
-Publication : Vendredi 22 septembre 2023 16:56:56
+Publication : Vendredi 22 septembre 2023 16:56:56 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/172785)
 - [YouTube](https://www.youtube.com/watch?v=MvEJv101MDE)
@@ -82,7 +82,7 @@ Publication : Vendredi 22 septembre 2023 16:56:56
 
 ### Épisode 9 - Ho ho ho
 
-Publication : Mardi 19 décembre 2023 16:03:51
+Publication : Mardi 19 décembre 2023 16:03:51 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/182967)
 - [YouTube](https://www.youtube.com/watch?v=vFOoKbhGX80)
@@ -91,7 +91,7 @@ Publication : Mardi 19 décembre 2023 16:03:51
 
 ### Épisode 10 - En temps et en heure
 
-Publication : Jeudi 1 février 2024 14:34:28
+Publication : Jeudi 1 février 2024 14:34:28 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/187435)
 - [YouTube](https://www.youtube.com/watch?v=6pGrB0WfqFk)
@@ -100,7 +100,7 @@ Publication : Jeudi 1 février 2024 14:34:28
 
 ### Épisode 11 - Fabuleux, légendaire… le retour
 
-Publication : Lundi 18 mars 2024 11:31:30
+Publication : Lundi 18 mars 2024 11:31:30 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/191951)
 - [YouTube](https://www.youtube.com/watch?v=VUa9mCbcWBk)
@@ -109,7 +109,7 @@ Publication : Lundi 18 mars 2024 11:31:30
 
 ### Épisode 12 - L'Après Empress !!
 
-Publication : Vendredi 12 avril 2024 16:52:16
+Publication : Vendredi 12 avril 2024 16:52:16 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/194499)
 - [YouTube](https://www.youtube.com/watch?v=GtbQ4QEPoNE)
@@ -118,7 +118,7 @@ Publication : Vendredi 12 avril 2024 16:52:16
 
 ### Épisode 13 - Chacun porte sa croix (de pharmacie)
 
-Publication : Vendredi 10 mai 2024 10:45:30
+Publication : Vendredi 10 mai 2024 10:45:30 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/197467)
 - [YouTube](https://www.youtube.com/watch?v=rGnK9A8veL4)
@@ -126,7 +126,7 @@ Publication : Vendredi 10 mai 2024 10:45:30
 
 ### Épisode 14 - Tuning de croix
 
-Publication : Mercredi 12 juin 2024 13:12:29
+Publication : Mercredi 12 juin 2024 13:12:29 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/200601)
 - [YouTube](https://www.youtube.com/watch?v=nHIlIGXdmz0)
@@ -134,7 +134,7 @@ Publication : Mercredi 12 juin 2024 13:12:29
 
 ### Épisode 15 - Y'a des pharmaciens dans les Tippos ?
 
-Publication : Mercredi 11 septembre 2024 15:18:53
+Publication : Mercredi 11 septembre 2024 15:18:53 UTC+2
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/207639)
 - [YouTube](https://www.youtube.com/watch?v=JpsK-Le86qk)
@@ -143,7 +143,7 @@ Publication : Mercredi 11 septembre 2024 15:18:53
 
 ### Épisode 16 - Un retard, quel retard ?
 
-Publication : Mardi 19 novembre 2024 11:15:16
+Publication : Mardi 19 novembre 2024 11:15:16 UTC+1
 
 - [Tipeee](https://fr.tipeee.com/sylvqin/news/213209)
 - [YouTube](https://www.youtube.com/watch?v=37iOH-bQnpw)
