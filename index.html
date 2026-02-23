@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <svg class="bg-lissajous" aria-hidden="true">
+        <path class="lissajous-1" fill="none" />
+        <path class="lissajous-2" fill="none" />
+        <path class="lissajous-3" fill="none" />
+    </svg>
+
     <header>
         <h1>Armand Delessert</h1>
         <p class="subtitle">Site personnel</p>
@@ -60,5 +66,64 @@
     <footer>
         <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
     </footer>
+
+    <script>
+        (function () {
+            var svg = document.querySelector('.bg-lissajous');
+            var paths = [
+                { el: svg.querySelector('.lissajous-1'), a: 3, b: 2, speed: 0.0015, points: 300 },
+                { el: svg.querySelector('.lissajous-2'), a: 5, b: 4, speed: 0.0010, points: 400 },
+                { el: svg.querySelector('.lissajous-3'), a: 3, b: 4, speed: 0.0020, points: 350 }
+            ];
+            var time = 0;
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function resize() {
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+            }
+
+            function drawCurve(curve, delta) {
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                var cx = w / 2;
+                var cy = h / 2;
+                var ax = w * 0.38;
+                var ay = h * 0.38;
+                var d = '';
+
+                for (var i = 0; i <= curve.points; i++) {
+                    var t = (i / curve.points) * 2 * Math.PI;
+                    var x = cx + ax * Math.sin(curve.a * t + delta);
+                    var y = cy + ay * Math.sin(curve.b * t);
+                    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
+                }
+
+                curve.el.setAttribute('d', d + 'Z');
+            }
+
+            function animate() {
+                time += 1;
+                for (var i = 0; i < paths.length; i++) {
+                    drawCurve(paths[i], time * paths[i].speed);
+                }
+                if (!reducedMotion) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            resize();
+            window.addEventListener('resize', resize);
+
+            // Draw initial frame, then animate if motion is allowed
+            for (var i = 0; i < paths.length; i++) {
+                drawCurve(paths[i], 0);
+            }
+            if (!reducedMotion) {
+                requestAnimationFrame(animate);
+            }
+        })();
+    </script>
 </body>
 </html>
