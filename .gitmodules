@@ -1,3 +1,6 @@
 [submodule "RssFeed/Sylvqin-Podcast"]
 	path = RssFeed/Sylvqin-Podcast
 	url = https://github.com/ArmandDelessert/Sylvqin-Podcast.git
+[submodule "Games"]
+	path = Games
+	url = https://github.com/ArmandDelessert/Web-Games.git
