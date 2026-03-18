@@ -10,6 +10,7 @@
     --lissajous-stroke-1: rgba(37, 99, 235, 0.10);
     --lissajous-stroke-2: rgba(99, 102, 241, 0.07);
     --lissajous-stroke-3: rgba(16, 185, 129, 0.06);
+    --nav-height: 3rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,42 +43,211 @@ body {
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-bg);
+}
+
+/* ── Navigation ──────────────────────────────────────────── */
+
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.site-nav.nav-visible {
+    opacity: 1;
+    pointer-events: auto;
+    background: var(--color-bg);
+    box-shadow: 0 1px 0 var(--color-border);
+}
+
+.nav-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+}
+
+.nav-inner a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.nav-inner a:hover {
+    color: var(--color-accent);
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 2rem 1rem;
 }
 
-header,
-main,
-footer {
+.hero-inner {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: var(--color-subtitle);
+    margin-top: 0.5rem;
+}
+
+.hero-links {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.hero-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.hero-link:hover {
+    text-decoration: underline;
+}
+
+.hero-sep {
+    color: var(--color-border);
+}
+
+/* ── Main ────────────────────────────────────────────────── */
+
+main {
     max-width: 800px;
     margin: 0 auto;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-header .subtitle {
-    color: var(--color-subtitle);
-    margin-top: 0.25rem;
+    padding: 0 1rem 4rem;
 }
 
 section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 section h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--color-border);
 }
+
+/* ── À propos ────────────────────────────────────────────── */
+
+.bio p {
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.skill-group h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skill-pills li {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+/* ── Timeline ────────────────────────────────────────────── */
+
+.timeline {
+    list-style: none;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.75rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.5rem - 5px);
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+.timeline-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.timeline-org {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.1rem;
+}
+
+.timeline-period {
+    font-size: 0.8rem;
+    color: var(--color-subtitle);
+    margin-top: 0.15rem;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
 
 .card-grid {
     display: grid;
@@ -102,20 +272,39 @@ section h2 {
 }
 
 .card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .card p {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     color: var(--color-text-secondary);
 }
 
+/* ── Projets personnels — sous-sections ──────────────────── */
+
+.subsection-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+#projets > .card-grid {
+    margin-bottom: 0;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+
 footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
     border-top: 1px solid var(--color-border);
     font-size: 0.85rem;
 }
@@ -129,7 +318,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Lissajous background animation */
+/* ── Lissajous ───────────────────────────────────────────── */
+
 .bg-lissajous {
     position: fixed;
     inset: 0;
@@ -154,12 +344,22 @@ footer a:hover {
     stroke-width: 1;
 }
 
+/* ── Responsive ──────────────────────────────────────────── */
+
 @media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
     .card-grid {
         grid-template-columns: 1fr;
     }
 
-    header h1 {
-        font-size: 1.5rem;
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-inner {
+        gap: 1rem;
     }
 }
