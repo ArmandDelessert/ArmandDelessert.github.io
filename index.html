@@ -16,11 +16,14 @@
 
     <nav class="site-nav" aria-label="Navigation principale">
         <div class="nav-inner">
-            <a href="#apropos">À propos</a>
-            <a href="#experience">Expérience</a>
-            <a href="#formation">Formation</a>
-            <a href="#realisations">Réalisations</a>
-            <a href="#projets">Projets personnels</a>
+            <button class="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="#apropos">À propos</a>
+                <a href="#experience">Expérience</a>
+                <a href="#formation">Formation</a>
+                <a href="#realisations">Réalisations</a>
+                <a href="#projets">Projets personnels</a>
+            </div>
         </div>
     </nav>
 
@@ -30,7 +33,7 @@
             <p class="hero-tagline">Ingénieur logiciel</p>
             <p class="hero-links">
                 <a href="https://www.linkedin.com/in/armand-delessert/" class="hero-link">LinkedIn</a>
-                <span class="hero-sep" aria-hidden="true">|</span>
+                <span class="hero-sep" aria-hidden="true">·</span>
                 <a href="https://github.com/ArmandDelessert/" class="hero-link">GitHub</a>
             </p>
         </div>
@@ -104,17 +107,17 @@
             <ol class="timeline">
                 <li class="timeline-item">
                     <h3>Master en développement logiciel</h3>
-                    <p class="timeline-org">HES-SO</p>
+                    <p class="timeline-org"><a href="https://hes-so.ch/">HES-SO</a></p>
                     <p class="timeline-period">2018</p>
                 </li>
                 <li class="timeline-item">
                     <h3>Bachelor en informatique — orientation embarquée</h3>
-                    <p class="timeline-org">HEIG-VD</p>
+                    <p class="timeline-org"><a href="https://heig-vd.ch/">HEIG-VD</a></p>
                     <p class="timeline-period">2016</p>
                 </li>
                 <li class="timeline-item">
                     <h3>CFC en électronique</h3>
-                    <p class="timeline-org">ETVJ / ETML</p>
+                    <p class="timeline-org"><a href="https://etvj.ch/">ETVJ</a> / <a href="https://etml.ch/">ETML</a></p>
                     <p class="timeline-period">2009</p>
                 </li>
             </ol>
@@ -202,19 +205,36 @@
     </main>
 
     <footer>
-        <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
+        <div class="footer-contact">
+            <a href="https://www.linkedin.com/in/armand-delessert/">LinkedIn</a>
+            <span class="footer-sep" aria-hidden="true">·</span>
+            <a href="https://github.com/ArmandDelessert/">GitHub</a>
+        </div>
+        <p class="footer-source">
+            <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
+        </p>
+        <p class="footer-copyright">© <span id="footer-year"></span> Armand Delessert</p>
     </footer>
 
     <script>
-        // Navigation : apparaît au défilement
+        // Menu de navigation mobile
         (function () {
-            var nav = document.querySelector('.site-nav');
-            var hero = document.querySelector('.hero');
-            var observer = new IntersectionObserver(function (entries) {
-                nav.classList.toggle('nav-visible', !entries[0].isIntersecting);
-            }, { threshold: 0 });
-            observer.observe(hero);
+            var toggle = document.querySelector('.nav-toggle');
+            var links = document.querySelector('.nav-links');
+            toggle.addEventListener('click', function () {
+                var open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', String(open));
+            });
+            links.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    links.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
         })();
+
+        // Année du copyright
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
 
         // Courbes de Lissajous
         (function () {
@@ -238,8 +258,8 @@
                 var h = window.innerHeight;
                 var cx = w / 2;
                 var cy = h / 2;
-                var ax = w * 0.38;
-                var ay = h * 0.38;
+                var ax = w * 0.5;
+                var ay = h * 0.5;
                 var d = '';
                 for (var i = 0; i <= curve.points; i++) {
                     var t = (i / curve.points) * 2 * Math.PI;
