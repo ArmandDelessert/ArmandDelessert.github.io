@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Armand Delessert</title>
-    <meta name="description" content="Site personnel d'Armand Delessert - Collections, outils et podcasts">
+    <meta name="description" content="Armand Delessert — Ingénieur logiciel">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,18 +14,183 @@
         <path class="lissajous-3" fill="none" />
     </svg>
 
-    <header>
-        <h1>Armand Delessert</h1>
-        <p class="subtitle">
-            <a href="https://www.linkedin.com/in/armand-delessert/" class="subtitle">LinkedIn</a>
-            |
-            <a href="https://github.com/ArmandDelessert/" class="subtitle">GitHub</a>
-        </p>
+    <nav class="site-nav" aria-label="Navigation principale">
+        <div class="nav-inner">
+            <button class="nav-toggle" aria-label="Menu de navigation" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="#apropos">À propos</a>
+                <a href="#experience">Expérience</a>
+                <a href="#formation">Formation</a>
+                <a href="#realisations">Réalisations</a>
+                <a href="#projets">Projets personnels</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <h1>Armand Delessert</h1>
+            <p class="hero-tagline">Ingénieur logiciel</p>
+            <p class="hero-links">
+                <a href="https://www.linkedin.com/in/armand-delessert/" class="hero-link">LinkedIn</a>
+                <span class="hero-sep" aria-hidden="true">·</span>
+                <a href="https://github.com/ArmandDelessert/" class="hero-link">GitHub</a>
+            </p>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Collections</h2>
+        <section id="apropos">
+            <h2>À propos</h2>
+            <div class="bio">
+                <p>Ingénieur logiciel avec près de 4 ans d’expérience en développement C#/.NET dans le domaine de l'industrie, titulaire d'un Bachelor et d'un Master en informatique. Mon objectif est de renforcer mes compétences en C# et .NET, tout en explorant de nouvelles technologies.</p>
+                <p>C'est au début des années 2000, avec l'acquisition d'un ordinateur familial, que j'ai découvert l'informatique. Après un CFC en électronique, j'ai obtenu mon Bachelor en informatique (orientation « embarqué ») à la HEIG-VD, puis mon Master en développement logiciel à l'HES-SO. J'ai ensuite développé mes compétences en C#, .NET et WPF dans le domaine industriel, au sein d'équipes organisées selon la méthodologie Agile.</p>
+                <p>Je m'informe continuellement des dernières actualités technologiques. Mes autres centres d'intérêt sont les sciences et l'astronomie.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Langages</h3>
+                    <ul class="skill-pills">
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Frameworks &amp; outils</h3>
+                    <ul class="skill-pills">
+                        <li>.NET</li>
+                        <li>WPF</li>
+                        <li>Azure Pipelines</li>
+                        <li>Visual Studio</li>
+                        <li>Git</li>
+                        <li>Scrum</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Expérience</h2>
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <h3>Ingénieur logiciel</h3>
+                    <p class="timeline-org"><a href="https://objectis.com/">Objectis SA</a></p>
+                    <p class="timeline-meta">Industrie</p>
+                    <p class="timeline-period">sept. 2023 – déc. 2024</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>Stage d'autoformation — JavaScript</h3>
+                    <p class="timeline-org"><a href="https://lab4tech.ch/">Lab4tech</a></p>
+                    <p class="timeline-meta">Formation</p>
+                    <p class="timeline-period">avr. – juil. 2023</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>R&amp;D Software Engineer</h3>
+                    <p class="timeline-org"><a href="https://rollomatic.ch/">Rollomatic SA</a></p>
+                    <p class="timeline-meta">Industrie de la machine-outil</p>
+                    <p class="timeline-period">oct. 2019 – nov. 2021</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>Responsable technique &amp; IT par intérim</h3>
+                    <p class="timeline-org"><a href="https://delessert.ch/">Delessert SA</a></p>
+                    <p class="timeline-meta">Génie civil</p>
+                    <p class="timeline-period">sept. 2018 – sept. 2019</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="formation">
+            <h2>Formation</h2>
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <h3>Master en développement logiciel</h3>
+                    <p class="timeline-org"><a href="https://hes-so.ch/">HES-SO</a></p>
+                    <p class="timeline-period">2018</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>Bachelor en informatique — orientation embarquée</h3>
+                    <p class="timeline-org"><a href="https://heig-vd.ch/">HEIG-VD</a></p>
+                    <p class="timeline-period">2016</p>
+                </li>
+                <li class="timeline-item">
+                    <h3>CFC en électronique</h3>
+                    <p class="timeline-org"><a href="https://etvj.ch/">ETVJ</a> / <a href="https://etml.ch/">ETML</a></p>
+                    <p class="timeline-period">2009</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="realisations">
+            <h2>Réalisations</h2>
+
+            <h3 class="subsection-title">Travail de Master</h3>
+            <a href="AboutMe/MyProjects/Travail de Master/Résumé_TM_Armand_Delessert.pdf" class="card">
+                <h3>Live Audio Transcription</h3>
+                <p>Transcription automatique de vidéo en direct — HES-SO (Amazon Transcribe, Google Cloud Speech, Microsoft Azure Speech)</p>
+            </a>
+
+            <h3 class="subsection-title">Travail d'approfondissement</h3>
+            <a href="AboutMe/MyProjects/Projet d'approfondissement/Web App Inventaire HE-Arc.pdf" class="card">
+                <h3>Web App Inventaire HE-Arc</h3>
+                <p>Application mobile PWA d'inventaire — HES-SO (HTML, JavaScript, API REST)</p>
+            </a>
+
+            <h3 class="subsection-title">Travail de Bachelor</h3>
+            <a href="AboutMe/MyProjects/Travail de Bachelor/Résumé publiable TB EcoSimSOO.pdf" class="card">
+                <h3>EcoSimSOO</h3>
+                <p>Simulation d'un écosystème de dispositifs SOO — HEIG-VD (Java, JavaFX)</p>
+            </a>
+
+            <h3 class="subsection-title">Projet associatif</h3>
+            <a href="https://www.acaif.ch/" class="card">
+                <h3>Site web ACAIF</h3>
+                <p>Site web statique de l'Association des Commerçants, Artisans et Industriels de Forel (Lavaux) — Hugo</p>
+            </a>
+        </section>
+
+        <section id="projets">
+            <h2>Projets personnels</h2>
+
+            <h3 class="subsection-title">Jeux</h3>
+            <div class="card-grid">
+                <a href="Games/Snake/index.html" class="card">
+                    <h3>Snake</h3>
+                    <p>Le jeu du serpent</p>
+                </a>
+                <a href="Games/ZooKeeper/index.html" class="card">
+                    <h3>Zoo Keeper</h3>
+                    <p>Jeu de capture de territoire inspiré de Qix/Xonix</p>
+                </a>
+            </div>
+
+            <h3 class="subsection-title">Outils</h3>
+            <div class="card-grid">
+                <a href="PathConverter/index.html" class="card">
+                    <h3>Path Converter</h3>
+                    <p>Convertisseur de chemin Windows en URI file://</p>
+                </a>
+                <a href="UrlShortener/index.html" class="card">
+                    <h3>URL Shortener</h3>
+                    <p>Raccourcisseur d'URL</p>
+                </a>
+            </div>
+
+            <h3 class="subsection-title">Podcasts</h3>
+            <div class="card-grid">
+                <a href="https://github.com/ArmandDelessert/Sylvqin-Podcast/blob/main/ReadMe.md" class="card">
+                    <h3>Podcast Sylvqin</h3>
+                    <p>Le podcast des soutiens de Sylvqin</p>
+                </a>
+                <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/FranceInfo/Les%20Rat%C3%A9s%20du%20climat/Podcast.md" class="card">
+                    <h3>Les Ratés du climat</h3>
+                    <p>Podcast franceinfo par François Gémenne</p>
+                </a>
+            </div>
+
+            <h3 class="subsection-title">Collections</h3>
             <div class="card-grid">
                 <a href="Science&amp;Vie/Science&amp;Vie.html" class="card">
                     <h3>Science &amp; Vie</h3>
@@ -37,55 +202,41 @@
                 </a>
             </div>
         </section>
-
-        <section>
-            <h2>Outils</h2>
-            <div class="card-grid">
-                <a href="PathConverter/index.html" class="card">
-                    <h3>Path Converter</h3>
-                    <p>Convertisseur de chemin Windows en URI file://</p>
-                </a>
-                <a href="UrlShortener/index.html" class="card">
-                    <h3>URL Shortener</h3>
-                    <p>Raccourcisseur d'URL</p>
-                </a>
-            </div>
-        </section>
-
-        <section>
-            <h2>Podcasts</h2>
-            <div class="card-grid">
-                <a href="https://github.com/ArmandDelessert/Sylvqin-Podcast/blob/main/ReadMe.md" class="card">
-                    <h3>Podcast Sylvqin</h3>
-                    <p>Le podcast des soutiens de Sylvqin</p>
-                </a>
-                <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io/blob/master/RssFeed/FranceInfo/Les%20Rat%C3%A9s%20du%20climat/Podcast.md" class="card">
-                    <h3>Les Rat&eacute;s du climat</h3>
-                    <p>Podcast franceinfo par Fran&ccedil;ois G&eacute;menne</p>
-                </a>
-            </div>
-        </section>
-
-        <section>
-            <h2>Jeux</h2>
-            <div class="card-grid">
-                <a href="Games/Snake/index.html" class="card">
-                    <h3>Snake</h3>
-                    <p>Le jeu du serpent</p>
-                </a>
-                <a href="Games/ZooKeeper/index.html" class="card">
-                    <h3>Zoo Keeper</h3>
-                    <p>Jeu de capture de territoire inspir&eacute; de Qix/Xonix</p>
-                </a>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
+        <div class="footer-contact">
+            <a href="https://www.linkedin.com/in/armand-delessert/">LinkedIn</a>
+            <span class="footer-sep" aria-hidden="true">·</span>
+            <a href="https://github.com/ArmandDelessert/">GitHub</a>
+        </div>
+        <p class="footer-source">
+            <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
+        </p>
+        <p class="footer-copyright">© <span id="footer-year"></span> Armand Delessert</p>
     </footer>
 
     <script>
+        // Menu de navigation mobile
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var links = document.querySelector('.nav-links');
+            toggle.addEventListener('click', function () {
+                var open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', String(open));
+            });
+            links.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    links.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+
+        // Année du copyright
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Courbes de Lissajous
         (function () {
             var svg = document.querySelector('.bg-lissajous');
             var paths = [
@@ -107,17 +258,15 @@
                 var h = window.innerHeight;
                 var cx = w / 2;
                 var cy = h / 2;
-                var ax = w * 0.38;
-                var ay = h * 0.38;
+                var ax = w * 0.5;
+                var ay = h * 0.5;
                 var d = '';
-
                 for (var i = 0; i <= curve.points; i++) {
                     var t = (i / curve.points) * 2 * Math.PI;
                     var x = cx + ax * Math.sin(curve.a * t + delta);
                     var y = cy + ay * Math.sin(curve.b * t);
                     d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
                 }
-
                 curve.el.setAttribute('d', d + 'Z');
             }
 
@@ -133,8 +282,6 @@
 
             resize();
             window.addEventListener('resize', resize);
-
-            // Draw initial frame, then animate if motion is allowed
             for (var i = 0; i < paths.length; i++) {
                 drawCurve(paths[i], 0);
             }
