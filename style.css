@@ -241,6 +241,22 @@ section h2 {
     margin-top: 0.1rem;
 }
 
+.timeline-org a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.timeline-org a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.timeline-meta {
+    font-size: 0.8rem;
+    color: var(--color-subtitle);
+    margin-top: 0.1rem;
+}
+
 .timeline-period {
     font-size: 0.8rem;
     color: var(--color-subtitle);
