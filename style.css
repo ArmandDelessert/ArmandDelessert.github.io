@@ -7,9 +7,7 @@
     --color-card-bg: #fff;
     --color-accent: #2563eb;
     --color-accent-hover-shadow: rgba(37, 99, 235, 0.1);
-    --lissajous-stroke-1: rgba(37, 99, 235, 0.10);
-    --lissajous-stroke-2: rgba(99, 102, 241, 0.07);
-    --lissajous-stroke-3: rgba(16, 185, 129, 0.06);
+    --circle-color: rgb(37, 99, 235);
     --nav-height: 3rem;
 }
 
@@ -23,9 +21,7 @@
         --color-card-bg: #1e1e1e;
         --color-accent: #60a5fa;
         --color-accent-hover-shadow: rgba(96, 165, 250, 0.15);
-        --lissajous-stroke-1: rgba(96, 165, 250, 0.12);
-        --lissajous-stroke-2: rgba(129, 140, 248, 0.09);
-        --lissajous-stroke-3: rgba(52, 211, 153, 0.08);
+        --circle-color: rgb(96, 165, 250);
     }
 }
 
@@ -365,7 +361,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ── Lissajous ───────────────────────────────────────────── */
+/* ── Fond animé ──────────────────────────────────────────── */
 
 .bg-lissajous {
     position: fixed;
@@ -374,21 +370,7 @@ footer a:hover {
     height: 100%;
     z-index: -1;
     pointer-events: none;
-}
-
-.lissajous-1 {
-    stroke: var(--lissajous-stroke-1);
-    stroke-width: 1.5;
-}
-
-.lissajous-2 {
-    stroke: var(--lissajous-stroke-2);
-    stroke-width: 1.2;
-}
-
-.lissajous-3 {
-    stroke: var(--lissajous-stroke-3);
-    stroke-width: 1;
+    color: var(--circle-color);
 }
 
 /* ── Responsive ──────────────────────────────────────────── */

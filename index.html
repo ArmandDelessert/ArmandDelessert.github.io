@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <svg class="bg-lissajous" aria-hidden="true">
-        <path class="lissajous-1" fill="none" />
-        <path class="lissajous-2" fill="none" />
-        <path class="lissajous-3" fill="none" />
-    </svg>
+    <svg class="bg-lissajous" aria-hidden="true"></svg>
 
     <nav class="site-nav" aria-label="Navigation principale">
         <div class="nav-inner">
@@ -236,58 +232,145 @@
         // Année du copyright
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-        // Courbes de Lissajous
+        // Cercles concentriques suivant le curseur
         (function () {
             var svg = document.querySelector('.bg-lissajous');
-            var paths = [
-                { el: svg.querySelector('.lissajous-1'), a: 3, b: 2, speed: 0.0015, points: 300 },
-                { el: svg.querySelector('.lissajous-2'), a: 5, b: 4, speed: 0.0010, points: 400 },
-                { el: svg.querySelector('.lissajous-3'), a: 3, b: 4, speed: 0.0020, points: 350 }
-            ];
-            var time = 0;
-            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 8 cercles — rayons en progression arithmétique (écarts : 50, 70, 90, 110, 130, 150, 170 px)
+            var radii    = [30, 80, 150, 240, 350, 480, 630, 800];
+            // Facteur de lerp décroissant : les grands cercles ont plus de retard
+            var lerps    = [0.15, 0.10, 0.07, 0.05, 0.035, 0.025, 0.018, 0.012];
+            // Opacité de base (curseur immobile) et opacité max (côté curseur, vitesse élevée)
+            var baseOp   = [0.12, 0.10, 0.08, 0.07, 0.05, 0.04, 0.03, 0.02];
+            var brightOp = [1.00, 0.85, 0.70, 0.55, 0.40, 0.30, 0.22, 0.15];
+
+            var N   = radii.length;
+            var cx0 = window.innerWidth / 2;
+            var cy0 = window.innerHeight / 2;
+
+            var mouse              = { x: cx0, y: cy0 };
+            var prevAnim           = { x: cx0, y: cy0 };   // position souris au frame précédent
+            var smoothedSpeed      = 0;                     // vitesse lissée (px/frame)
+            // Intensité du dégradé lissée par cercle (retard croissant vers l'extérieur)
+            var smoothedIntensity  = radii.map(function () { return 0; });
+            var positions          = radii.map(function () { return { x: cx0, y: cy0 }; });
+            var lastDirs      = radii.map(function () { return { x: 1, y: 0 }; });
+            var circles       = [];
+            var stops0        = [];   // références aux stops "côté opposé"
+            var stops1        = [];   // références aux stops "côté curseur"
+            var grads         = [];
+
+            // Créer les <defs> + un <linearGradient> par cercle
+            var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            svg.appendChild(defs);
+
+            for (var i = 0; i < N; i++) {
+                var grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+                grad.setAttribute('id', 'cg-' + i);
+                grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+
+                var s0 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                s0.setAttribute('offset', '0%');
+                s0.setAttribute('stop-color', 'currentColor');
+                s0.setAttribute('stop-opacity', String(baseOp[i]));
+
+                var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                s1.setAttribute('offset', '100%');
+                s1.setAttribute('stop-color', 'currentColor');
+                s1.setAttribute('stop-opacity', String(baseOp[i]));
+
+                grad.appendChild(s0);
+                grad.appendChild(s1);
+                defs.appendChild(grad);
+                grads.push(grad);
+                stops0.push(s0);
+                stops1.push(s1);
+
+                var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                c.setAttribute('r', radii[i]);
+                c.setAttribute('cx', cx0);
+                c.setAttribute('cy', cy0);
+                c.setAttribute('fill', 'none');
+                c.setAttribute('stroke', 'url(#cg-' + i + ')');
+                c.setAttribute('stroke-width', '1');
+                svg.appendChild(c);
+                circles.push(c);
+            }
 
             function resize() {
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-                svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+                svg.setAttribute('viewBox', '0 0 ' + window.innerWidth + ' ' + window.innerHeight);
             }
-
-            function drawCurve(curve, delta) {
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-                var cx = w / 2;
-                var cy = h / 2;
-                var ax = w * 0.5;
-                var ay = h * 0.5;
-                var d = '';
-                for (var i = 0; i <= curve.points; i++) {
-                    var t = (i / curve.points) * 2 * Math.PI;
-                    var x = cx + ax * Math.sin(curve.a * t + delta);
-                    var y = cy + ay * Math.sin(curve.b * t);
-                    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
-                }
-                curve.el.setAttribute('d', d + 'Z');
-            }
-
-            function animate() {
-                time += 1;
-                for (var i = 0; i < paths.length; i++) {
-                    drawCurve(paths[i], time * paths[i].speed);
-                }
-                if (!reducedMotion) {
-                    requestAnimationFrame(animate);
-                }
-            }
-
             resize();
             window.addEventListener('resize', resize);
-            for (var i = 0; i < paths.length; i++) {
-                drawCurve(paths[i], 0);
+
+            document.addEventListener('mousemove', function (e) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            document.addEventListener('touchmove', function (e) {
+                if (e.touches.length > 0) {
+                    mouse.x = e.touches[0].clientX;
+                    mouse.y = e.touches[0].clientY;
+                }
+            }, { passive: true });
+
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function animate() {
+                // ── Vitesse du curseur ──────────────────────────────────────
+                var dmx = mouse.x - prevAnim.x;
+                var dmy = mouse.y - prevAnim.y;
+                prevAnim.x = mouse.x;
+                prevAnim.y = mouse.y;
+                var rawSpeed = Math.sqrt(dmx * dmx + dmy * dmy);
+                // Filtre exponentiel : montée rapide, descente en ~0,3 s
+                smoothedSpeed = smoothedSpeed * 0.85 + rawSpeed * 0.15;
+                // Intensité globale : 0 (immobile) → 1 (vitesse ≥ 35 px/frame)
+                var intensity = Math.min(1, smoothedSpeed / 35);
+
+                for (var i = 0; i < N; i++) {
+                    positions[i].x += (mouse.x - positions[i].x) * lerps[i];
+                    positions[i].y += (mouse.y - positions[i].y) * lerps[i];
+
+                    var px = positions[i].x;
+                    var py = positions[i].y;
+                    circles[i].setAttribute('cx', px.toFixed(1));
+                    circles[i].setAttribute('cy', py.toFixed(1));
+
+                    // Direction curseur → centre du cercle (normalisée)
+                    var dx   = mouse.x - px;
+                    var dy   = mouse.y - py;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist > 5) {
+                        lastDirs[i].x = dx / dist;
+                        lastDirs[i].y = dy / dist;
+                    }
+                    var nx = lastDirs[i].x;
+                    var ny = lastDirs[i].y;
+                    var r  = radii[i];
+
+                    grads[i].setAttribute('x1', (px - nx * r).toFixed(1));
+                    grads[i].setAttribute('y1', (py - ny * r).toFixed(1));
+                    grads[i].setAttribute('x2', (px + nx * r).toFixed(1));
+                    grads[i].setAttribute('y2', (py + ny * r).toFixed(1));
+
+                    // Intensité lissée par cercle : les grands cercles réagissent plus lentement
+                    smoothedIntensity[i] += (intensity - smoothedIntensity[i]) * lerps[i];
+                    var si = smoothedIntensity[i];
+
+                    // Interpolation des opacités :
+                    //   si=0 → anneau uniforme à baseOp
+                    //   si=1 → côté opposé transparent, côté curseur à brightOp
+                    var op0 = baseOp[i] * (1 - si);
+                    var op1 = baseOp[i] + (brightOp[i] - baseOp[i]) * si;
+                    stops0[i].setAttribute('stop-opacity', op0.toFixed(4));
+                    stops1[i].setAttribute('stop-opacity', op1.toFixed(4));
+                }
+                if (!reducedMotion) requestAnimationFrame(animate);
             }
-            if (!reducedMotion) {
-                requestAnimationFrame(animate);
-            }
+
+            if (!reducedMotion) requestAnimationFrame(animate);
         })();
     </script>
 </body>
