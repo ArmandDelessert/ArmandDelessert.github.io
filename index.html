@@ -236,13 +236,13 @@
         (function () {
             var svg = document.querySelector('.bg-lissajous');
 
-            // 8 cercles — rayons en progression arithmétique (écarts : 50, 70, 90, 110, 130, 150, 170 px)
+            // 8 disques — rayons en progression arithmétique (écarts : 50, 70, 90, 110, 130, 150, 170 px)
             var radii    = [30, 80, 150, 240, 350, 480, 630, 800];
-            // Facteur de lerp décroissant : les grands cercles ont plus de retard
-            var lerps    = [0.15, 0.10, 0.07, 0.05, 0.035, 0.025, 0.018, 0.012];
-            // Opacité de base (curseur immobile) et opacité max (côté curseur, vitesse élevée)
-            var baseOp   = [0.12, 0.10, 0.08, 0.07, 0.05, 0.04, 0.03, 0.02];
-            var brightOp = [1.00, 0.85, 0.70, 0.55, 0.40, 0.30, 0.22, 0.15];
+            // Facteur de lerp réduit : déplacement plus lent, retard croissant vers l'extérieur
+            var lerps    = [0.07, 0.05, 0.035, 0.025, 0.018, 0.012, 0.009, 0.006];
+            // Opacité au centre du dégradé radial : base (immobile) et max (vitesse élevée)
+            var baseOp   = [0.06, 0.05, 0.04, 0.03, 0.025, 0.02, 0.015, 0.01];
+            var brightOp = [0.40, 0.30, 0.22, 0.16, 0.12, 0.09, 0.07, 0.05];
 
             var N   = radii.length;
             var cx0 = document.documentElement.clientWidth / 2;
@@ -255,46 +255,49 @@
             var smoothedIntensity  = radii.map(function () { return 0; });
             var positions          = radii.map(function () { return { x: cx0, y: cy0 }; });
             var lastDirs      = radii.map(function () { return { x: 1, y: 0 }; });
-            var circles       = [];
-            var stops0        = [];   // références aux stops "côté opposé"
-            var stops1        = [];   // références aux stops "côté curseur"
+            var circles       = new Array(N);
+            var innerStops    = [];   // stop central du dégradé radial (opacité dynamique)
             var grads         = [];
 
-            // Créer les <defs> + un <linearGradient> par cercle
+            // Créer les <defs> + un <radialGradient> par disque
             var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
             svg.appendChild(defs);
 
             for (var i = 0; i < N; i++) {
-                var grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-                grad.setAttribute('id', 'cg-' + i);
+                var grad = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
+                grad.setAttribute('id', 'rg-' + i);
                 grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+                grad.setAttribute('cx', cx0);
+                grad.setAttribute('cy', cy0);
+                grad.setAttribute('r', radii[i]);
 
-                var s0 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-                s0.setAttribute('offset', '0%');
-                s0.setAttribute('stop-color', 'currentColor');
-                s0.setAttribute('stop-opacity', String(baseOp[i]));
+                var sIn = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                sIn.setAttribute('offset', '0%');
+                sIn.setAttribute('stop-color', 'currentColor');
+                sIn.setAttribute('stop-opacity', String(baseOp[i]));
 
-                var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-                s1.setAttribute('offset', '100%');
-                s1.setAttribute('stop-color', 'currentColor');
-                s1.setAttribute('stop-opacity', String(baseOp[i]));
+                var sOut = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                sOut.setAttribute('offset', '100%');
+                sOut.setAttribute('stop-color', 'currentColor');
+                sOut.setAttribute('stop-opacity', '0');
 
-                grad.appendChild(s0);
-                grad.appendChild(s1);
+                grad.appendChild(sIn);
+                grad.appendChild(sOut);
                 defs.appendChild(grad);
                 grads.push(grad);
-                stops0.push(s0);
-                stops1.push(s1);
+                innerStops.push(sIn);
+            }
 
+            // Disques du plus grand au plus petit : le plus petit est rendu par-dessus
+            for (var i = N - 1; i >= 0; i--) {
                 var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 c.setAttribute('r', radii[i]);
                 c.setAttribute('cx', cx0);
                 c.setAttribute('cy', cy0);
-                c.setAttribute('fill', 'none');
-                c.setAttribute('stroke', 'url(#cg-' + i + ')');
-                c.setAttribute('stroke-width', '1');
+                c.setAttribute('fill', 'url(#rg-' + i + ')');
+                c.setAttribute('stroke', 'none');
                 svg.appendChild(c);
-                circles.push(c);
+                circles[i] = c;
             }
 
             // Point central (suit le cercle le plus petit)
@@ -358,26 +361,23 @@
                         lastDirs[i].x = dx / dist;
                         lastDirs[i].y = dy / dist;
                     }
+                    // Intensité lissée par disque : les grands disques réagissent plus lentement
+                    smoothedIntensity[i] += (intensity - smoothedIntensity[i]) * lerps[i];
+                    var si = smoothedIntensity[i];
+
                     var nx = lastDirs[i].x;
                     var ny = lastDirs[i].y;
                     var r  = radii[i];
 
-                    grads[i].setAttribute('x1', (px - nx * r).toFixed(1));
-                    grads[i].setAttribute('y1', (py - ny * r).toFixed(1));
-                    grads[i].setAttribute('x2', (px + nx * r).toFixed(1));
-                    grads[i].setAttribute('y2', (py + ny * r).toFixed(1));
+                    // Centre du dégradé radial : légèrement décalé vers le curseur selon la vitesse
+                    var offset = r * 0.25 * si;
+                    grads[i].setAttribute('cx', (px + nx * offset).toFixed(1));
+                    grads[i].setAttribute('cy', (py + ny * offset).toFixed(1));
+                    grads[i].setAttribute('r',  r);
 
-                    // Intensité lissée par cercle : les grands cercles réagissent plus lentement
-                    smoothedIntensity[i] += (intensity - smoothedIntensity[i]) * lerps[i];
-                    var si = smoothedIntensity[i];
-
-                    // Interpolation des opacités :
-                    //   si=0 → anneau uniforme à baseOp
-                    //   si=1 → côté opposé transparent, côté curseur à brightOp
-                    var op0 = baseOp[i] * (1 - si);
-                    var op1 = baseOp[i] + (brightOp[i] - baseOp[i]) * si;
-                    stops0[i].setAttribute('stop-opacity', op0.toFixed(4));
-                    stops1[i].setAttribute('stop-opacity', op1.toFixed(4));
+                    // Opacité au centre : baseOp au repos → brightOp à pleine vitesse
+                    var opIn = baseOp[i] + (brightOp[i] - baseOp[i]) * si;
+                    innerStops[i].setAttribute('stop-opacity', opIn.toFixed(4));
                 }
                 dot.setAttribute('cx', positions[0].x.toFixed(1));
                 dot.setAttribute('cy', positions[0].y.toFixed(1));
