@@ -245,8 +245,8 @@
             var brightOp = [1.00, 0.85, 0.70, 0.55, 0.40, 0.30, 0.22, 0.15];
 
             var N   = radii.length;
-            var cx0 = window.innerWidth / 2;
-            var cy0 = window.innerHeight / 2;
+            var cx0 = document.documentElement.clientWidth / 2;
+            var cy0 = document.documentElement.clientHeight / 2;
 
             var mouse              = { x: cx0, y: cy0 };
             var prevAnim           = { x: cx0, y: cy0 };   // position souris au frame précédent
