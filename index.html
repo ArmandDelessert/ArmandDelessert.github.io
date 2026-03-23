@@ -297,8 +297,20 @@
                 circles.push(c);
             }
 
+            // Point central (suit le cercle le plus petit)
+            var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dot.setAttribute('r', '1');
+            dot.setAttribute('fill', 'currentColor');
+            dot.setAttribute('stroke', 'none');
+            dot.setAttribute('cx', cx0);
+            dot.setAttribute('cy', cy0);
+            dot.setAttribute('opacity', String(baseOp[0]));
+            svg.appendChild(dot);
+
             function resize() {
-                svg.setAttribute('viewBox', '0 0 ' + window.innerWidth + ' ' + window.innerHeight);
+                var w = document.documentElement.clientWidth;
+                var h = document.documentElement.clientHeight;
+                svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
             }
             resize();
             window.addEventListener('resize', resize);
@@ -367,6 +379,9 @@
                     stops0[i].setAttribute('stop-opacity', op0.toFixed(4));
                     stops1[i].setAttribute('stop-opacity', op1.toFixed(4));
                 }
+                dot.setAttribute('cx', positions[0].x.toFixed(1));
+                dot.setAttribute('cy', positions[0].y.toFixed(1));
+                dot.setAttribute('opacity', (baseOp[0] + (brightOp[0] - baseOp[0]) * smoothedIntensity[0]).toFixed(4));
                 if (!reducedMotion) requestAnimationFrame(animate);
             }
 
