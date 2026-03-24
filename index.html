@@ -256,7 +256,7 @@
             var positions          = radii.map(function () { return { x: cx0, y: cy0 }; });
             var lastDirs      = radii.map(function () { return { x: 1, y: 0 }; });
             var circles       = new Array(N);
-            var innerStops    = [];   // stop central du dégradé radial (opacité dynamique)
+            var outerStops    = [];   // stop périphérique du dégradé radial (opacité dynamique)
             var grads         = [];
 
             // Créer les <defs> + un <radialGradient> par disque
@@ -274,18 +274,18 @@
                 var sIn = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
                 sIn.setAttribute('offset', '0%');
                 sIn.setAttribute('stop-color', 'currentColor');
-                sIn.setAttribute('stop-opacity', String(baseOp[i]));
+                sIn.setAttribute('stop-opacity', '0');
 
                 var sOut = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
                 sOut.setAttribute('offset', '100%');
                 sOut.setAttribute('stop-color', 'currentColor');
-                sOut.setAttribute('stop-opacity', '0');
+                sOut.setAttribute('stop-opacity', String(baseOp[i]));
 
                 grad.appendChild(sIn);
                 grad.appendChild(sOut);
                 defs.appendChild(grad);
                 grads.push(grad);
-                innerStops.push(sIn);
+                outerStops.push(sOut);
             }
 
             // Disques du plus grand au plus petit : le plus petit est rendu par-dessus
@@ -375,9 +375,9 @@
                     grads[i].setAttribute('cy', (py + ny * offset).toFixed(1));
                     grads[i].setAttribute('r',  r);
 
-                    // Opacité au centre : baseOp au repos → brightOp à pleine vitesse
-                    var opIn = baseOp[i] + (brightOp[i] - baseOp[i]) * si;
-                    innerStops[i].setAttribute('stop-opacity', opIn.toFixed(4));
+                    // Opacité au bord : baseOp au repos → brightOp à pleine vitesse
+                    var opOut = baseOp[i] + (brightOp[i] - baseOp[i]) * si;
+                    outerStops[i].setAttribute('stop-opacity', opOut.toFixed(4));
                 }
                 dot.setAttribute('cx', positions[0].x.toFixed(1));
                 dot.setAttribute('cy', positions[0].y.toFixed(1));
