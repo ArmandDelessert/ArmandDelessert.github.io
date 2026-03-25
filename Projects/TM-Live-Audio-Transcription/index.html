@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Audio Transcription — Travail de Master · Armand Delessert</title>
+    <meta name="description" content="Live Audio Transcription — Transcription de vidéo live pour du sous-titrage automatique. Travail de Master d'Armand Delessert à la HES-SO.">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+    <header class="project-header">
+        <div class="project-header-inner">
+            <a href="../../../" class="project-back">← Armand Delessert</a>
+            <span class="project-type">Travail de Master · 2018</span>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <section class="project-hero">
+            <h1>Live Audio Transcription</h1>
+            <p class="project-subtitle">Transcription de vidéo live pour du sous-titrage automatique</p>
+            <ul class="project-meta">
+                <li><a href="https://hes-so.ch/">HES-SO</a></li>
+                <li>Amazon Transcribe · Google Cloud Speech · Microsoft Azure Speech · FFmpeg · Wowza Streaming Engine</li>
+            </ul>
+        </section>
+
+        <section class="project-body">
+            <h2>Résumé</h2>
+            <p>La vidéo est un vecteur d'informations de plus en plus utilisé et de plus en plus présent dans notre quotidien. La société <a href="https://www.4am.ch/">4AM SA</a>, qui s'occupe de la retransmission vidéo en direct de conférences, d'événements sportifs et culturels en tout genre, souhaitait explorer les solutions possibles pour la mise en place d'un système de sous-titrage automatique de ses flux vidéo en direct.</p>
+            <p>Il y a plusieurs raisons à une telle démarche. Il y a premièrement la valorisation du contenu vidéo en direct en améliorant son accessibilité aux personnes ayant un déficit de l'audition ou lorsque le son n'est pas audible, par exemple dans un milieu bruyant. Il y a ensuite la possibilité de rechercher un contenu précis dans une vidéo via une recherche par mots-clés. Enfin, il pourrait être possible de traduire automatiquement les sous-titres produits afin de rendre la vidéo accessible à un public de langue différente.</p>
+            <p>La première phase du projet consistait à dresser un état de la technique afin de repérer quelles sont les solutions actuellement disponibles. Après une comparaison de ces solutions, un choix a été porté sur les plus appropriées qui ont ensuite été implémentées dans un démonstrateur.</p>
+            <p>Une attention particulière a dû être portée sur les contraintes et les critères de sélection des solutions de transcription. Certaines contraintes étaient éliminatrices, comme la contrainte de traitement en temps réel. D'autres étaient bienvenues mais pas primordiales, comme la reconnaissance et la distinction de plusieurs locuteurs.</p>
+            <p>Finalement, ce travail aura permis de faire un rapide tour d'horizon de la transcription d'un flux audio en direct.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-copyright">© <span id="footer-year"></span> Armand Delessert</p>
+    </footer>
+
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Inventaire HE-Arc — Projet d'approfondissement · Armand Delessert</title>
+    <meta name="description" content="Web App Inventaire HE-Arc — Application web PWA pour la gestion des emprunts de matériel. Projet d'approfondissement d'Armand Delessert à la HE-Arc.">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+    <header class="project-header">
+        <div class="project-header-inner">
+            <a href="../../../" class="project-back">← Armand Delessert</a>
+            <span class="project-type">Travail d'approfondissement · 2018</span>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <section class="project-hero">
+            <h1>Web App Inventaire HE-Arc</h1>
+            <p class="project-subtitle">Application web multiplateforme pour la gestion des emprunts de matériel</p>
+            <ul class="project-meta">
+                <li><a href="https://he-arc.ch/">Haute École Arc Ingénierie (HE-Arc)</a>, <a href="https://hes-so.ch/">HES-SO</a></li>
+                <li>HTML · JavaScript · API REST · PWA</li>
+                <li>Sous la direction de Prof. David Grunenwald</li>
+                <li><a href="https://github.com/HE-Arc/Inventory-HE-Arc-Web-App">Code source sur GitHub</a></li>
+            </ul>
+        </section>
+
+        <section class="project-body">
+            <h2>Contexte et objectifs</h2>
+            <p>La HE-Arc dispose d'un inventaire de son matériel disponible en prêt pour ses collaborateurs. Cet inventaire contient toute sorte de matériel électronique, tels que des ordinateurs portables, des téléphones portables, des appareils photo, des oscilloscopes, des multimètres ou encore des cartes électroniques de développement. Chaque collaborateur peut effectuer un emprunt de matériel dans cet inventaire selon ses besoins.</p>
+            <p>Actuellement, le seul moyen d'effectuer des emprunts de matériel est de passer par le site web de l'inventaire. Malheureusement, ce dernier n'est pas adapté aux téléphones mobiles et ne permet pas d'utiliser les codes-barres ou les codes QR pour identifier un appareil rapidement.</p>
+            <p>Le but de ce projet est de développer une application web multiplateforme permettant d'enregistrer un emprunt ou un retour de matériel. Cette application web doit pouvoir s'adapter aux différentes tailles d'écran afin d'être utilisable autant sur ordinateur que sur smartphone (design responsive). L'application devra également proposer un scanner de codes-barres et codes QR afin de rapidement lire le numéro d'inventaire d'un appareil. Enfin, le développement se focalisera sur une Progressive Web Application (PWA).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-copyright">© <span id="footer-year"></span> Armand Delessert</p>
+    </footer>
+
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
