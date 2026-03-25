@@ -1,6 +1,6 @@
 // Animation : disques concentriques se déplaçant vers le dernier clic
 (function () {
-    var svg = document.querySelector('.bg-lissajous');
+    var svg = document.querySelector('.bg-circles');
 
     // 8 disques — rayons en progression arithmétique (écarts : 50, 70, 90, 110, 130, 150, 170 px)
     var radii    = [30, 80, 150, 240, 350, 480, 630, 800];
