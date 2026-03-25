@@ -225,14 +225,9 @@
                 // Seuil : juste sous la barre de navigation fixe
                 var threshold = navEl.offsetHeight + 8;
                 var current = null;
-                var atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 8;
-                if (atBottom) {
-                    current = sections[sections.length - 1].id;
-                } else {
-                    for (var i = 0; i < sections.length; i++) {
-                        if (sections[i].getBoundingClientRect().top <= threshold) {
-                            current = sections[i].id;
-                        }
+                for (var i = 0; i < sections.length; i++) {
+                    if (sections[i].getBoundingClientRect().top <= threshold) {
+                        current = sections[i].id;
                     }
                 }
                 navLinks.forEach(function (a) {
