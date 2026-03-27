@@ -195,14 +195,16 @@ section h2 {
     margin-bottom: 0.5rem;
 }
 
-.skill-pills {
+.skill-pills,
+.project-tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
 }
 
-.skill-pills li {
+.skill-pills li,
+.project-tags li {
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
     border-radius: 4px;
