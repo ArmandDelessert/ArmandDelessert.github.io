@@ -377,7 +377,6 @@ footer a:hover {
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    color: var(--circle-color);
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
