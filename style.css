@@ -370,7 +370,7 @@ footer a:hover {
 
 /* ── Fond animé ──────────────────────────────────────────── */
 
-.bg-circles {
+.plasma-bg {
     position: fixed;
     inset: 0;
     width: 100%;
