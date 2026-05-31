@@ -216,6 +216,7 @@
             <a href="https://github.com/ArmandDelessert/ArmandDelessert.github.io">Code source sur GitHub</a>
         </p>
         <p class="footer-copyright">© <span id="footer-year"></span> Armand Delessert</p>
+        <p class="footer-version">Dernière mise à jour : <span id="footer-version-date"></span></p>
     </footer>
 
     <script>
@@ -263,6 +264,16 @@
 
         // Année du copyright
         document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Date de dernière mise à jour
+        fetch('version.json')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.date) return;
+                var d = new Date(data.date + 'T00:00:00');
+                var label = d.toLocaleDateString('fr-CH', { day: 'numeric', month: 'long', year: 'numeric' });
+                document.getElementById('footer-version-date').textContent = label;
+            });
 
     </script>
     <script src="bg-circles.js"></script>

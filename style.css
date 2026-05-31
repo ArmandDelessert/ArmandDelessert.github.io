@@ -359,6 +359,11 @@ footer {
     color: var(--color-subtitle);
 }
 
+.footer-version {
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+}
+
 footer a {
     color: var(--color-accent);
     text-decoration: none;

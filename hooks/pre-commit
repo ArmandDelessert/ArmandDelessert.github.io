@@ -1,0 +1,4 @@
+#!/bin/sh
+DATE=$(date +%Y-%m-%d)
+printf '{"date": "%s"}\n' "$DATE" > version.json
+git add version.json
