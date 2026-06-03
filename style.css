@@ -360,8 +360,7 @@ footer {
 }
 
 .footer-version {
-    color: var(--color-text-secondary);
-    font-size: 0.78rem;
+    color: var(--color-subtitle);
 }
 
 footer a {
