@@ -1,0 +1,4 @@
+#!/bin/sh
+DATETIME=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+printf '{"date": "%s"}\n' "$DATETIME" > version.json
+git add version.json

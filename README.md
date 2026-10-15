@@ -1,3 +1,5 @@
+<img src="favicon.svg" height="70" alt="">
+
 # ArmandDelessert.github.io
 
 Site personnel d'Armand Delessert.

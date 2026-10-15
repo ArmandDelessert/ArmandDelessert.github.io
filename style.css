@@ -359,6 +359,10 @@ footer {
     color: var(--color-subtitle);
 }
 
+.footer-version {
+    color: var(--color-subtitle);
+}
+
 footer a {
     color: var(--color-accent);
     text-decoration: none;
